@@ -124,24 +124,11 @@
   .diff-table .subnote{display:block; margin-top:3px; font-size:12px; color:var(--muted)}
   /* ── 页脚 ── */
   footer{max-width:1280px; margin:0 auto; padding:24px 16px 40px; color:var(--muted); font-size:12px; border-top:1px solid var(--line)}
-  /* ── 本期看点：动作建议卡片 ── */
+  /* ── 焦点卡：倒计时与过期态 ── */
   .focus-hint{font-size:13px;color:var(--muted);margin:-4px 0 16px}
-  .card.act{gap:6px;border-left:4px solid var(--primary)}
-  .card.act.hot{border-left-color:var(--up);background:linear-gradient(180deg,#fff5f7,#fff)}
-  .card.act.soon{border-left-color:#d97706;background:linear-gradient(180deg,#fffaf0,#fff)}
-  .card.act.steady{border-left-color:#7c3aed;background:linear-gradient(180deg,#faf8ff,#fff)}
-  .card.act.done{opacity:.48;filter:grayscale(.5)}
-  .act-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .act-tag{font-size:11px;letter-spacing:1px;color:var(--muted);font-weight:600}
-  .act-count{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap;background:var(--primary-soft);color:var(--primary)}
-  .act-count.hot{background:var(--up-bg);color:var(--up)}
-  .act-count.soon{background:#fff7ed;color:#b45309}
-  .act-count.steady{background:var(--new-bg);color:var(--new)}
-  .act-count.done{background:var(--flat-bg);color:var(--flat)}
-  .act-title{font-size:17px;font-weight:700;line-height:1.4;margin-top:4px}
-  .act-body{font-size:13px;color:var(--text);margin-top:6px}
-  .act-meta{font-size:12px;color:var(--muted);margin-top:6px}
-  .act-risk{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:8px}
+  .card.done{opacity:.48;filter:grayscale(.5)}
+  .days{font-weight:700;margin-left:8px}
+  .days.hot{color:var(--up)} .days.soon{color:#b45309} .days.calm{color:var(--primary)}
   @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
 </style>
 </head>
@@ -156,7 +143,7 @@
     <div class="stat t-up">涨价 / 待涨<b id="cntUp">0</b> 个</div>
     <div class="stat t-new">新上架<b id="cntNew">0</b> 个</div>
     <div class="stat">收录模型<b id="cntAll">0</b> 个</div>
-    <div class="stat t-new">本期建议<b id="cntAct">0</b> 条</div>
+    <div class="stat t-new">本期看点<b id="cntAct">0</b> 个</div>
   </div>
 </header>
 
@@ -171,8 +158,8 @@
 
 <main>
   <section style="margin-top:0">
-    <h2>本周该做什么</h2>
-    <p class="focus-hint">下面不是报价，是这周真正值得动手的事。带日期的会自动倒计时、按紧迫度排序，窗口一过就沉底；每期跟着价格变化走。</p>
+    <h2>本周焦点</h2>
+    <p class="focus-hint">价格下面是为什么值得看。带窗口的按到期时间排，过期自动沉底。</p>
     <div class="grid" id="grid"></div>
   </section>
 
@@ -253,51 +240,25 @@
 <footer>
   数据来源：各厂商官方定价页与 OpenRouter 模型渠道报价 ·
   价格随时可能变动，下单前以厂商官网与渠道当期报价为准 · 涨跌标注以上一期价格为基准 ·
-  DeepSeek/xAI 等标注为闲时/短上下文标准价 · 渠道比价为 2026-11-11 公开报价快照，不代表该渠道全部模型 · 本期为第 24 期观察同步 · 上方「本周该做什么」按到期日自动倒计时，窗口过期自动沉底
+  DeepSeek/xAI 等标注为闲时/短上下文标准价 · 渠道比价为 2026-11-11 公开报价快照，不代表该渠道全部模型 · 本期为第 24 期观察同步 · 上方「本周焦点」按到期日自动倒计时，窗口过期自动沉底
 </footer>
 
 <script>
-/* ═══ 每次更新只改这个数组 ═══
-   st: down=降价  up=涨价/待涨  new=新上架  flat=持平
-   focus: true 则进"本周焦点"卡片 */
+/* ═══ 每次更新只改 PRICE_DATA ═══
+   items[] 全量价格表：st: down=降价 up=涨价/待涨 new=新上架 flat=持平
+   focusItems[] 焦点卡：大价格 + 一句原因；deadline 留空=常态，填日期=自动倒计时、排序、过期沉底 */
 const PRICE_DATA = {
   updatedAt: "2026-11-11",
-  /* 本期看点 —— 每期只改这一块。
-     deadline 留空 = 常态建议；填日期 = 自动倒计时、自动排序、过期自动沉底。
-     tag 是分类，title 是「该做什么」，act 是具体动作，risk 是别踩的坑。 */
+  /* 本期焦点 —— 每期只改这一块。
+     in/out 是美元/百万 tokens；note 只写一句「为什么值得看」，别写长。
+     deadline 留空 = 常态；填日期 = 自动倒计时、按紧迫度排序、过期置灰沉底。 */
   focusItems: [
-    {tag:"免费窗口", title:"HY4 现在免费，趁窗口白用",
-     act:"打开 WorkBuddy / CodeBuddy 直接跑长文档、图片理解、电脑操作类任务，11/15 前不花钱。手上有重活就这几天做完。",
-     ref:"腾讯 混元 HY4", price:"按量 5 折 $0.42 / $1.25", deadline:"2026-11-15",
-     risk:"免费额度有限；正价 $0.834 / $2.501 是 HY3 的 6 倍，别拿免费价做长期预算。"},
-    {tag:"折扣倒计时", title:"腾讯云 DeepSeek 4 折，11/16 中午就没",
-     act:"把带缓存复用的批量任务这周挪到腾讯云 Token Plan，闲时约 ¥0.4 / ¥1.6。过了 11/16 12:00 回原价。",
-     ref:"DeepSeek V4.1-Flash", price:"闲时 $0.15 / $0.60", deadline:"2026-11-16",
-     risk:"按北京时间分峰谷；Search / Fetch 各 $0.75 每千次另算，Agent 长任务账单会变厚。"},
-    {tag:"折扣倒计时", title:"Hy4 的 2.5 折，11/17 中午断",
-     act:"有中文长文档、1M 上下文需求就在这个窗口跑，Token Plan 抵扣后输入 ¥1.5 / 输出 ¥4.5；过期回按量 5 折。",
-     ref:"腾讯 混元 HY4（Token Plan）", price:"抵扣后 ¥1.5 / ¥4.5", deadline:"2026-11-17",
-     risk:"限时活动；数学与命令行类任务偏弱，第三方测的幻觉率与官方口径差很大。"},
-    {tag:"首发价", title:"Carbon $2 / $10，12 月 1 号翻倍",
-     act:"重活、长链 Agent、多步调试这周就在 AI Studio 测；Batch 再半价 $1 / $5。别等 12 月。",
-     ref:"Google Gemini 4 Carbon", price:"$2.00 / $10.00", deadline:"2026-11-30",
-     risk:"它比 Argon 多烧思考 token，单价便宜不等于按任务便宜；11/13 起输出超 32K 的请求超时失败也计费。"},
-    {tag:"时段折扣", title:"把批量任务挪到夜里跑",
-     act:"Qwen3.8-Flash / Max 在 Token Plan 里 22:00–08:00 只扣四成额度，适合摘要、向量化、代码库扫描这类不急的活。",
-     ref:"阿里 Qwen3.8 Flash", price:"原生 ¥0.8 / ¥2.7", deadline:"2026-11-30",
-     risk:"夜间 4 折只在订阅制内生效，按量付费不享受；双 11 新客 5 折也在 11/30 结束。"},
-    {tag:"换配置", title:"子任务档从 Luna 换成 Muse Ember",
-     act:"同分（AA 36）但每任务 $0.14 vs Haiku 的 $0.41，缓存 $0.004 全场最低。工具调用、分类、抽取都换过去。",
-     ref:"Meta Muse Ember", price:"$0.10 / $0.50", deadline:"",
-     risk:"只有 Meta 自家 API，闭源不能自部署；世界知识弱，别拿它答开放域问题。"},
-    {tag:"别踩坑", title:"Fable 5.2 拿了第一，但别当主力",
-     act:"只把最难的那 5% 任务交给它，日常从 Opus 5.5（$4 / $20）起步就够。",
-     ref:"Anthropic Claude Fable 5.2", price:"$8.00 / $40.00", deadline:"",
-     risk:"每任务 $26.54，成本榜倒数第一；比同期的 Carbon 贵 4 倍。"},
-    {tag:"维持不变", title:"日常三件套不用动",
-     act:"跑量继续 GPT-6.1 Terra，缓存场景留 DeepSeek，中文继续 HY3（$0.132 / $0.528，连续 8 期没动）。",
-     ref:"OpenAI / DeepSeek / 腾讯", price:"Terra $1 / $5", deadline:"",
-     risk:"HY3 英文弱、上下文只有 HY4 的 1/4；这三条是稳定项，不是本周新机会。"}
+    {p:"腾讯",     m:"混元 HY4",            in:"0.42",  out:"1.25", cache:"$0.021", st:"new",  deadline:"2026-11-15", note:"WorkBuddy 里 11/15 前免费，长文档和图片任务趁这几天白用；Token Plan 2.5 折到 11/17。"},
+    {p:"DeepSeek", m:"V4.1-Flash",          in:"0.15",  out:"0.60", cache:"$0.003", st:"down", deadline:"2026-11-16", note:"腾讯云 4 折到 11/16 中午；缓存命中仍是全场最低。"},
+    {p:"Google",   m:"Gemini 4 Carbon",     in:"2.00",  out:"10.00",cache:"$0.10",  st:"new",  deadline:"2026-11-30", note:"首发价到 11/30，12/1 翻倍；重活、长链 Agent 趁 11 月跑完。"},
+    {p:"阿里",     m:"Qwen3.8 Flash",       in:"0.11",  out:"0.39", cache:"—",      st:"down", deadline:"2026-11-30", note:"Token Plan 夜间 22:00–08:00 只扣四成额度，批量任务挪到夜里。"},
+    {p:"Meta",     m:"Muse Ember",          in:"0.10",  out:"0.50", cache:"$0.004", st:"new",  deadline:"",           note:"同分 Haiku，每任务 $0.14 对 $0.41；子任务档换它。"},
+    {p:"Anthropic",m:"Claude Fable 5.2",    in:"8.00",  out:"40.00",cache:"$0.20",  st:"down", deadline:"",           note:"AA 65 分第一，但每任务 $26.54 最贵，只给最难的任务。"}
   ],
   items: [
     /* OpenAI */
@@ -363,13 +324,13 @@ const ST = {
   new:{cls:"b-new",txt:"✦ 新上架"}, flat:{cls:"b-flat",txt:"— 持平"}
 };
 const money = v => (v==="0" ? "免费" : "$"+v);
-/* 本期看点：动作建议卡片（按剩余天数自动排序 / 倒计时 / 过期沉底） */
+/* 焦点卡片：大价格 + 一句原因（按窗口到期日自动排序 / 倒计时 / 过期沉底） */
 const grid = document.getElementById("grid");
 const TODAY = new Date(Date.now() + 8*3600*1000).toISOString().slice(0,10); // 北京时间
 const daysLeft = d => d.deadline
   ? Math.round((new Date(d.deadline+"T00:00:00Z") - new Date(TODAY+"T00:00:00Z"))/86400000)
   : null;
-const acts = PRICE_DATA.focusItems.slice().sort((a,b)=>{
+const focus = PRICE_DATA.focusItems.slice().sort((a,b)=>{
   const da = daysLeft(a), db = daysLeft(b);
   if(da===null && db===null) return 0;
   if(da===null) return 1;
@@ -379,23 +340,27 @@ const acts = PRICE_DATA.focusItems.slice().sort((a,b)=>{
   if(db<0) return -1;
   return da-db;
 });
-acts.forEach((d,i)=>{
+focus.forEach((d,i)=>{
   const left = daysLeft(d);
   const done = left!==null && left<0;
-  const tone = done ? "done" : left===null ? "steady" : left<=3 ? "hot" : left<=7 ? "soon" : "calm";
-  const label = done ? "已到期" : left===null ? "常态建议" : left===0 ? "今天最后一天" : "剩 "+left+" 天";
+  const tone = done ? "done" : left===null ? "calm" : left<=3 ? "hot" : left<=7 ? "soon" : "calm";
+  const days = left===null ? "" : `<span class="days ${tone}">${done?"已到期":left===0?"今天最后一天":"剩 "+left+" 天"}</span>`;
+  const s = ST[d.st];
   const card = document.createElement("article");
-  card.className = "card act " + tone;
+  card.className = "card" + (d.st==="new"?" is-new":"") + (done?" done":"");
   card.style.animationDelay = (i*60)+"ms";
   card.innerHTML = `
-    <div class="act-head"><span class="act-tag">${d.tag}</span><span class="act-count ${tone}">${label}</span></div>
-    <div class="act-title">${d.title}</div>
-    <div class="act-body">${d.act}</div>
-    <div class="act-meta">${d.ref} · ${d.price}${d.deadline ? " · 到 " + d.deadline : ""}</div>
-    <div class="act-risk">⚠ ${d.risk}</div>`;
+    <div class="card-top"><span class="provider">${d.p}</span><span class="badge ${s.cls}">${s.txt}</span></div>
+    <div class="model">${d.m}</div>
+    <div class="prices">
+      <div class="price"><span>输入 $/1M</span><b>${money(d.in)}</b></div>
+      <div class="price"><span>输出 $/1M</span><b>${money(d.out)}</b></div>
+    </div>
+    <div class="cache">缓存命中：${d.cache}${days}</div>
+    <div class="note">💬 ${d.note}</div>`;
   grid.appendChild(card);
 });
-/* 建议条数 */
+/* 本期看点条数 */
 document.getElementById("cntAct").textContent = PRICE_DATA.focusItems.length;
 /* 全量表 */
 const tbody = document.getElementById("tbody");
