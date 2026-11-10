@@ -131,7 +131,7 @@
 
 <header class="hero">
   <h1>TOKEN <em>价格雷达</em></h1>
-  <p>全球主流大模型 API 价格全览 · AI 每 3 天 / 每周更新一次</p>
+  <p>全球主流大模型 API 价格全览 · 每周三随「AI Token 价格观察」自动同步</p>
   <div class="stats">
     <div class="stat">数据更新于<b id="updatedAt">—</b></div>
     <div class="stat t-down">本周降价<b id="cntDown">0</b> 个</div>
@@ -173,7 +173,7 @@
   </section>
   <section id="cheaper-than-official">
     <h2>哪些主流模型在中转渠道比官方便宜？</h2>
-    <p class="diff-intro">只列同一模型版本、输入和输出单价都低于官方 API 的实例。价格单位：美元 / 百万 Token；核对日期：2026-10-25。</p>
+    <p class="diff-intro">只列同一模型版本、实付单价低于官方 API 的实例，含限时折扣与批量模式。价格单位：美元 / 百万 Token；核对日期：2026-11-11。</p>
     <div class="tablewrap">
       <table class="diff-table">
         <thead>
@@ -184,48 +184,56 @@
         </thead>
         <tbody>
           <tr>
-            <td class="m">GLM-5.3</td>
-            <td class="price-pair">$1.40 / $4.40</td>
-            <td>SiliconFlow<span class="subnote">经 OpenRouter 指定渠道</span></td>
-            <td class="price-pair">$0.70 / $2.20</td>
+            <td class="m">MiniMax M3.1 Flash</td>
+            <td class="price-pair">$0.15 / $0.60<span class="subnote">MiniMax 官方标准价</span></td>
+            <td>OpenRouter<span class="subnote">第三方托管报价，非官方降价</span></td>
+            <td class="price-pair">$0.075 / $0.30</td>
             <td class="saving">输入 −50% · 输出 −50%</td>
-            <td><a href="https://docs.z.ai/guides/overview/pricing" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/z-ai/glm-5.3" target="_blank" rel="noopener noreferrer">渠道</a></td>
+            <td><a href="https://platform.minimaxi.com/docs/guides/pricing-paygo" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/minimax/minimax-m3.1-flash" target="_blank" rel="noopener noreferrer">渠道</a></td>
           </tr>
           <tr>
-            <td class="m">GLM-5.3-Flash</td>
-            <td class="price-pair">$0.15 / $0.50</td>
-            <td>GMICloud<span class="subnote">经 OpenRouter 指定渠道</span></td>
-            <td class="price-pair">$0.075 / $0.25</td>
+            <td class="m">腾讯混元 HY4</td>
+            <td class="price-pair">$0.834 / $2.501<span class="subnote">TokenHub 新加坡区目录价</span></td>
+            <td>腾讯云按量 5 折 / OpenRouter<span class="subnote">官方折扣，到 2026-12-31</span></td>
+            <td class="price-pair">$0.417 / $1.25</td>
             <td class="saving">输入 −50% · 输出 −50%</td>
-            <td><a href="https://docs.z.ai/guides/overview/pricing" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/z-ai/glm-5.3-flash" target="_blank" rel="noopener noreferrer">渠道</a></td>
+            <td><a href="https://cloud.tencent.com/document/product/1823/130055" target="_blank" rel="noopener noreferrer">官方价目</a> · <a href="https://openrouter.ai/tencent/hy4" target="_blank" rel="noopener noreferrer">渠道</a></td>
           </tr>
           <tr>
             <td class="m">DeepSeek V4.1 Flash 1017</td>
             <td class="price-pair">$0.15 / $0.60<span class="subnote">官方闲时、非缓存价</span></td>
-            <td>DeepInfra<span class="subnote">经 OpenRouter 指定渠道 · 促销价</span></td>
-            <td class="price-pair">$0.098 / $0.294</td>
-            <td class="saving">输入约 −35% · 输出 −51%</td>
-            <td><a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017" target="_blank" rel="noopener noreferrer">渠道</a></td>
+            <td>腾讯云 Token Plan 4 折<span class="subnote">闲时约 ¥0.4/¥1.6 · 到 11/16 12:00</span></td>
+            <td class="price-pair">≈$0.057 / $0.229</td>
+            <td class="saving">输入约 −62% · 输出约 −62%</td>
+            <td><a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://cloud.tencent.com/document/product/1823/133811" target="_blank" rel="noopener noreferrer">渠道规则</a></td>
           </tr>
           <tr>
-            <td class="m">MiniMax M3</td>
-            <td class="price-pair">$0.30 / $1.20<span class="subnote">官方标准档、≤512k 输入</span></td>
-            <td>CoreWeave<span class="subnote">经 OpenRouter 指定渠道</span></td>
-            <td class="price-pair">$0.23 / $0.96</td>
-            <td class="saving">输入约 −23% · 输出 −20%</td>
-            <td><a href="https://platform.minimax.io/docs/pricing/overview" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/minimax/minimax-m3" target="_blank" rel="noopener noreferrer">渠道</a></td>
+            <td class="m">Gemini 4 Carbon</td>
+            <td class="price-pair">$2.00 / $10.00<span class="subnote">11/30 前首发价，12/1 起 $4/$20</span></td>
+            <td>OpenRouter Batch<span class="subnote">批量异步半价，需改用 Batch API</span></td>
+            <td class="price-pair">$1.00 / $5.00</td>
+            <td class="saving">输入 −50% · 输出 −50%</td>
+            <td><a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/google/gemini-4-carbon:batch" target="_blank" rel="noopener noreferrer">渠道</a></td>
+          </tr>
+          <tr>
+            <td class="m">腾讯混元 HY3</td>
+            <td class="price-pair">$0.143 / $0.571<span class="subnote">官方 ¥1 / ¥4 折算</span></td>
+            <td>腾讯官方端点<span class="subnote">经 OpenRouter 直连，价更优</span></td>
+            <td class="price-pair">$0.132 / $0.528</td>
+            <td class="saving">输入约 −8% · 输出约 −8%</td>
+            <td><a href="https://cloud.tencent.com/document/product/1823/130055" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/tencent/hy3" target="_blank" rel="noopener noreferrer">渠道</a></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="diff-note">这里比的是公开标价，不是实付账单。OpenRouter 标准账户另收 5.5% 平台费；指定渠道、促销、缓存、长上下文和可用性都会影响实际成本。下单前请点开每行链接复核，不要把表中的折扣当作长期保价。</p>
+    <p class="diff-note">这里比的是公开标价，不是实付账单，且含限时窗口（腾讯云 DeepSeek 4 折到 11/16、HY4 5 折到 12/31、Carbon 首发价到 11/30）。OpenRouter 标准账户另收 5.5% 平台费；指定渠道、促销、缓存、长上下文和可用性都会影响实际成本。下单前请点开每行链接复核，不要把表中的折扣当作长期保价。</p>
   </section>
 </main>
 
 <footer>
   数据来源：各厂商官方定价页与 OpenRouter 模型渠道报价 ·
   价格随时可能变动，下单前以厂商官网与渠道当期报价为准 · 涨跌标注以上一期价格为基准 ·
-  DeepSeek/xAI 等标注为闲时/短上下文标准价 · 渠道比价为 2026-10-25 公开报价快照，不代表该渠道全部模型
+  DeepSeek/xAI 等标注为闲时/短上下文标准价 · 渠道比价为 2026-11-11 公开报价快照，不代表该渠道全部模型 · 本期为第 24 期观察同步
 </footer>
 
 <script>
@@ -233,54 +241,60 @@
    st: down=降价  up=涨价/待涨  new=新上架  flat=持平
    focus: true 则进"本周焦点"卡片 */
 const PRICE_DATA = {
-  updatedAt: "2026-10-21",
+  updatedAt: "2026-11-11",
   items: [
     /* OpenAI */
     {p:"OpenAI",  m:"GPT-6 Astra",        in:"10.00", out:"50.00", cache:"$1.00", st:"flat", note:"最贵旗舰，普通人用不上"},
-    {p:"OpenAI",  m:"GPT-6.1 Sol",        in:"2.00",  out:"10.00", cache:"$0.10", st:"flat", focus:true, note:"中高质量任务首选，缓存读 $0.10"},
-    {p:"OpenAI",  m:"GPT-6 Sol",          in:"2.00",  out:"10.00", cache:"—",     st:"flat", note:"上一代同价在跑，可被 6.1 Sol 替代"},
-    {p:"OpenAI",  m:"GPT-6 Luna",         in:"0.10",  out:"0.50",  cache:"$0.01", st:"down", focus:true, note:"全场最低价，Batch 再半价；只适合轻活"},
-    {p:"OpenAI",  m:"GPT-5.6 Sol",        in:"4.00",  out:"20.00", cache:"$0.40", st:"up",   note:"促销到 11/21，之后涨 25%，别充值"},
-    {p:"OpenAI",  m:"GPT-5.6 Terra",      in:"2.00",  out:"12.00", cache:"—",     st:"up",   note:"11 月涨 25% 阵营"},
-    {p:"OpenAI",  m:"GPT-5.6 Luna",       in:"0.20",  out:"1.20",  cache:"—",     st:"up",   note:"已被 GPT-6 Luna 全面替代"},
+    {p:"OpenAI",  m:"GPT-6.1 Sol",        in:"2.00",  out:"10.00", cache:"$0.10", st:"flat", note:"中高质量任务备选，缓存读 $0.10"},
+    {p:"OpenAI",  m:"GPT-6.1 Terra",      in:"1.00",  out:"5.00",  cache:"$0.05", st:"new",  focus:true, note:"10/26 上架，比 Sol 便宜一半、快 3 倍；跑量主力"},
+    {p:"OpenAI",  m:"GPT-6 Sol",          in:"2.00",  out:"10.00", cache:"—",     st:"flat", note:"上一代同价在跑，可被 6.1 系替代"},
+    {p:"OpenAI",  m:"GPT-6 Luna",         in:"0.10",  out:"0.50",  cache:"$0.01", st:"flat", note:"全场最低价档，Batch 再半价；子任务已被 Muse Ember 抢位"},
+    {p:"OpenAI",  m:"GPT-5.6 Sol",        in:"4.00",  out:"20.00", cache:"$0.40", st:"flat", note:"11 月涨价已被证伪；无价格优势，别充值"},
+    {p:"OpenAI",  m:"GPT-5.6 Terra",      in:"2.00",  out:"12.00", cache:"—",     st:"flat", note:"涨价未发生，但已被 6.1 Terra 全面取代"},
+    {p:"OpenAI",  m:"GPT-5.6 Luna",       in:"0.20",  out:"1.20",  cache:"—",     st:"flat", note:"已被 GPT-6 Luna 全面替代"},
     {p:"OpenAI",  m:"GPT-5.3 Codex",      in:"1.75",  out:"14.00", cache:"—",     st:"flat", note:"代码专用旧款，输出偏贵"},
     {p:"OpenAI",  m:"GPT-5.5",            in:"5.00",  out:"30.00", cache:"$0.50", st:"flat", note:"老旗舰，性价比已被 6 系取代"},
     /* Anthropic */
-    {p:"Anthropic",m:"Claude Fable 5.1",  in:"10.00", out:"50.00", cache:"$0.25", st:"flat", note:"顶级旗舰，每任务成本极高"},
-    {p:"Anthropic",m:"Claude Opus 5.5",   in:"4.00",  out:"20.00", cache:"$0.20", st:"flat", note:"复杂推理/长任务才上它"},
-    {p:"Anthropic",m:"Claude Sonnet 5.5", in:"2.00",  out:"10.00", cache:"$0.10", st:"down", note:"缓存读 $0.20→$0.10；编程第一梯队"},
-    {p:"Anthropic",m:"Claude Haiku 5.5",  in:"0.10",  out:"0.50",  cache:"$0.01", st:"new",  focus:true, note:"10/8 新上架；≤100K tokens 低价，超限 5 倍"},
+    {p:"Anthropic",m:"Claude Fable 5.2",  in:"8.00",  out:"40.00", cache:"$0.20", st:"down", focus:true, note:"11/9 发布，比 5.1 降 20%；AA 65 分第一，但每任务 $26.54 最贵档"},
+    {p:"Anthropic",m:"Claude Opus 5.5",   in:"4.00",  out:"20.00", cache:"$0.20", st:"flat", note:"官方建议日常从它起步，复杂任务才上 Fable"},
+    {p:"Anthropic",m:"Claude Sonnet 5.5", in:"2.00",  out:"10.00", cache:"$0.10", st:"flat", note:"缓存读 $0.10；编程第一梯队"},
+    {p:"Anthropic",m:"Claude Haiku 5.5",  in:"0.10",  out:"0.50",  cache:"$0.01", st:"flat", note:"≤100K tokens 低价，超限整单 5 倍；同分下 Muse Ember 更便宜"},
     /* Google */
-    {p:"Google",  m:"Gemini 4 Argon",     in:"2.00",  out:"10.00", cache:"$0.10", st:"new",  focus:true, note:"新旗舰促销 $2/$10，12/1 起涨到 $4/$20"},
+    {p:"Google",  m:"Gemini 4 Carbon",    in:"2.00",  out:"10.00", cache:"$0.10", st:"new",  focus:true, note:"11/10 全面开放，AA 60；首发价到 11/30，12/1 起 $4/$20，Batch 半价"},
+    {p:"Google",  m:"Gemini 4 Argon",     in:"2.00",  out:"10.00", cache:"$0.10", st:"up",   focus:true, note:"促销到 11/30，12/1 翻倍到 $4/$20；该跑的重活趁 11 月"},
     {p:"Google",  m:"Gemini 3.1 Pro",     in:"2.00",  out:"12.00", cache:"$0.20", st:"flat", note:"Preview，>200K 输入加价"},
-    {p:"Google",  m:"Gemini 3.8 Flash",   in:"0.75",  out:"3.75",  cache:"$0.075",st:"up",   note:"促销到 12/31，之后翻倍；多模态+1M 上下文"},
+    {p:"Google",  m:"Gemini 3.8 Flash",   in:"0.75",  out:"3.75",  cache:"$0.075",st:"up",   note:"促销到 12/31，2027/1/1 翻倍；多模态+1M 上下文"},
     {p:"Google",  m:"Gemini 3.1 Flash-Lite",in:"0.25",out:"1.50",  cache:"$0.025",st:"flat", note:"Google 低价档"},
     {p:"Google",  m:"Gemini 2.5 Flash-Lite",in:"0.10",out:"0.40",  cache:"$0.01", st:"flat", note:"输出最便宜的预案之一"},
     /* DeepSeek（闲时价，高峰×2） */
-    {p:"DeepSeek",m:"V4.1-Flash",         in:"0.15",  out:"0.60",  cache:"$0.003",st:"down", focus:true, note:"10/17 静默升级同价变相降；缓存命中全场最低"},
-    {p:"DeepSeek",m:"V4-Pro",             in:"0.66",  out:"1.98",  cache:"$0.022",st:"flat", note:"硬核任务可用；V4.1 Pro 随时发布，别囤额度"},
+    {p:"DeepSeek",m:"V4.1-Flash",         in:"0.15",  out:"0.60",  cache:"$0.003",st:"flat", focus:true, note:"缓存命中全场最低；腾讯云 4 折到 11/16；Search/Fetch 另收 $0.75/千次"},
+    {p:"DeepSeek",m:"V4-Pro",             in:"0.66",  out:"1.98",  cache:"$0.022",st:"flat", note:"硬核任务可用；V4.1 Pro 连续 7 期未发，别囤额度"},
     /* xAI（200K 内标准价） */
-    {p:"xAI",     m:"Grok 4.7",           in:"2.00",  out:"6.00",  cache:"$0.50", st:"flat", note:"同档输出最便宜，500K 上下文"},
+    {p:"xAI",     m:"Grok 4.7",           in:"2.00",  out:"6.00",  cache:"$0.50", st:"flat", note:"同档输出最便宜，500K 上下文；超 200K 翻倍"},
     {p:"xAI",     m:"Grok 4.3 / 4.20",    in:"1.25",  out:"2.50",  cache:"$0.20", st:"flat", note:"1M 上下文，性价比档"},
     {p:"xAI",     m:"Grok Build 0.1",     in:"1.00",  out:"2.00",  cache:"$0.20", st:"flat", note:"256K 上下文，轻量构建"},
     /* 阿里 Qwen */
-    {p:"阿里",    m:"Qwen3.8-Max",        in:"2.00",  out:"6.00",  cache:"—",     st:"flat", note:"Apache 2.0 开源旗舰"},
+    {p:"阿里",    m:"Qwen3.8-Max",        in:"1.65",  out:"4.95",  cache:"—",     st:"down", note:"Global 站比新加坡站便宜 17.5%；双 11 全系 4.5 折，Token Plan 加量、Pro 降到 312 元/月"},
     {p:"阿里",    m:"Qwen3.8 Max Prime",  in:"4.00",  out:"12.00", cache:"—",     st:"flat", note:"速度税，能力没拉开差距"},
     {p:"阿里",    m:"Qwen3.8 Flash",      in:"0.14",  out:"0.42",  cache:"—",     st:"flat", note:"国产低价档，输出便宜"},
     /* 腾讯混元 */
-    {p:"腾讯",    m:"混元 HY3",           in:"0.147", out:"0.588", cache:"—",     st:"flat", focus:true, note:"OpenRouter $0.13/$0.53 更便宜；中文轻量首选"},
-    {p:"腾讯",    m:"混元 HY4 preview",   in:"0.834", out:"2.501", cache:"—",     st:"flat", note:"免费期 10/10 已结束；等正式版更好更便宜"},
+    {p:"腾讯",    m:"混元 HY3",           in:"0.132", out:"0.528", cache:"$0.033",st:"flat", focus:true, note:"中文低价档最稳，连续 7 期未动；中文日常继续主力"},
+    {p:"腾讯",    m:"混元 HY4",           in:"0.42",  out:"1.25",  cache:"$0.021",st:"new",  focus:true, note:"11/4 正式版（5 折后实付，到 12/31）；Token Plan 2.5 折到 11/17，1M 上下文+图像"},
+    {p:"腾讯",    m:"混元 HY4 preview",   in:"0.834", out:"2.501", cache:"$0.042",st:"flat", note:"已被正式版取代，同规格却贵一倍"},
     /* 智谱 */
     {p:"智谱",    m:"GLM-5.3",            in:"1.40",  out:"4.40",  cache:"—",     st:"flat", note:"旗舰档，权重开放有条件"},
     {p:"智谱",    m:"GLM-5.3-Flash",      in:"0.15",  out:"0.50",  cache:"免费",  st:"flat", note:"缓存命中限时免费，低价守门员"},
     {p:"智谱",    m:"GLM-4.7-Flash",      in:"0",     out:"0",     cache:"—",     st:"flat", note:"永久免费 API（open.bigmodel.cn）"},
     /* 月之暗面 / MiniMax / 小米 */
-    {p:"月之暗面",m:"Kimi K3",            in:"3.00",  out:"15.00", cache:"—",     st:"flat", note:"国产最贵一档，性价比低"},
-    {p:"MiniMax", m:"M3",                 in:"0.30",  out:"1.20",  cache:"—",     st:"flat", note:"512K 输入，社区许可证"},
+    {p:"月之暗面",m:"Kimi K3.1 Pro",      in:"2.00",  out:"10.00", cache:"—",     st:"down", note:"10/28 从 $3/$15 降到 $2/$10"},
+    {p:"MiniMax", m:"M3",                 in:"0.30",  out:"1.20",  cache:"—",     st:"flat", note:"512K 输入，社区许可证；火山方舟 11/2 已下线"},
+    {p:"MiniMax", m:"M3.1 Flash",         in:"0.075", out:"0.30",  cache:"$0.0075",st:"down", note:"OpenRouter 端比官方 $0.15/$0.60 便宜一半；Agent 任务成本比前代降 70%"},
     {p:"小米",    m:"MiMo-V2.6-Pro",      in:"0.435", out:"0.87",  cache:"—",     st:"flat", note:"万亿参数 MIT 开源，接近 GPT-6 Sol 价格 1/10"},
     /* Meta */
+    {p:"Meta",    m:"Muse Ember",         in:"0.10",  out:"0.50",  cache:"$0.004",st:"new",  focus:true, note:"11/9 新发；AA 36 同分 Haiku，每任务 $0.14 vs $0.41；子任务首选，闭源不可自部署"},
     {p:"Meta",    m:"Muse Spark 1.3",     in:"0.10",  out:"0.20",  cache:"—",     st:"flat", note:"实验档，数据可能用于训练"},
     /* Mistral */
+    {p:"Mistral", m:"Large 4 (Le Chonk)", in:"0.70",  out:"2.10",  cache:"$0.07", st:"down", note:"从 $1.36/$4.18 降回；1T 开源权重；官网三处报价不一致，只认 docs 页"},
     {p:"Mistral", m:"Large 3",            in:"0.50",  out:"1.50",  cache:"—",     st:"flat", note:"Apache 2.0，欧盟数据驻留友好"},
     {p:"Mistral", m:"Small 4",            in:"0.15",  out:"0.60",  cache:"—",     st:"flat", note:"开源轻量，欧洲合规之选"},
     {p:"Mistral", m:"Medium 3.5",         in:"1.50",  out:"7.50",  cache:"—",     st:"flat", note:"中间档，存在感一般"},
