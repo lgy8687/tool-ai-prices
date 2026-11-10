@@ -247,7 +247,7 @@
   </section>
   <section id="cheaper-than-official">
     <h2>哪些主流模型在中转渠道比官方便宜？</h2>
-    <p class="diff-intro">11/5 逐站核对的结论：<b>同一个模型，厂商官方、阿里云百炼、火山方舟、七牛云 AI 广场的刊例价几乎完全一致</b>（Kimi K3.1 Pro ¥13/¥68、GLM-5.3 ¥8/¥28、DeepSeek V4.1 Flash 高峰 ¥2/¥8、闲时 ¥1/¥4，单位元 / 百万 Token）。真正拉开账单的是四种机制：第三方托管端点、官方限时折扣、Batch / 闲时、包月订阅。注意聚合路由首页挂着的是「最低端点价」而非通用价，同一模型不同端点可差数倍（第 ① 组有实例）。下表按这四类分列，价格统一折算美元 / 百万 Token（人民币按 1:7），核对日期 2026-11-11。</p>
+    <p class="diff-intro">11/5 逐站核对的结论：<b>同一个模型，厂商官方、阿里云百炼、火山方舟、七牛云 AI 广场的刊例价几乎完全一致</b>（Kimi K3.1 Pro ¥13/¥68、GLM-5.3 ¥8/¥28、DeepSeek V4.1 Flash 高峰 ¥2/¥8、闲时 ¥1/¥4，单位元 / 百万 Token）。真正拉开账单的是四种机制：第三方托管端点、官方限时折扣、Batch / 闲时、包月订阅。注意：聚合路由首页显示的是最低端点价，有些甚至是缓存读价或不参与标准路由的端点；本期已逐行打开 providers 列表核对托管方与口径，无法同口径对比的一律不进报价列。下表按这四类分列，价格统一折算美元 / 百万 Token（人民币按 1:7），核对日期 2026-11-11。</p>
     <div class="tablewrap">
       <table class="diff-table">
         <thead>
@@ -265,7 +265,7 @@
       <div><b>③ 个人在 IDE 写代码</b>编程套餐最省（智谱 GLM Coding Plan 118 元起、火山首两月 2.5 折），但不能接自动化脚本、有 5 小时窗口。</div>
       <div><b>④ 月用量 ≥ 3000 元且能挪到夜里</b>企业订阅才划算：七牛云 Token Plan B 档 5 折 × 闲时 0.3 ≈ 1.5 折，但积分周清零、超额直接拒。</div>
     </div>
-    <p class="diff-note">口径与陷阱：① 表中是公开标价，不是实付账单；OpenRouter 标准账户另收 <b>5.5% 平台费</b>，同一模型不同托管端点价差可达数倍，按路由实际命中的端点结算。② 第三方托管端点价 <b>不等于官方降价</b>，随时可能换供应商或下架，别写进长期预算。③ 缓存命中、长上下文加价、峰谷时段、Search / Fetch 工具调用都会改变实际成本。④ 订阅积分不结转、Batch 不能用于实时对话、编程套餐不能接后端。⑤ <b>最后一组是反例</b>：Gemini 3.8 Flash、Qwen Plus 走 OpenRouter 反而更贵，别默认「走聚合一定省」。⑥ 已失效别再找：GitHub Models 免费档 7/30 全线下线、Cerebras 永久免费取消、Hugging Face 免费额度取消、硅基流动永久免费小模型档已取消。⑦ 端点最低价若与缓存读价几乎同价（如 $0.006 输入 / $0.005 缓存读），多半是高缓存命中率折算出来的展示价，不代表普通输入便宜 96%；必须同口径对比主流端点区间，不能把单点极值写成渠道降价。下单前点开每行来源复核，别把限时折扣当长期保价。</p>
+    <p class="diff-note">口径与陷阱：① 表中是公开标价，不是实付账单；OpenRouter 标准账户另收 <b>5.5% 平台费</b>，同一模型不同托管端点价差可达数倍，按路由实际命中的端点结算。② 第三方托管端点价 <b>不等于官方降价</b>，随时可能换供应商或下架，别写进长期预算。③ 缓存命中、长上下文加价、峰谷时段、Search / Fetch 工具调用都会改变实际成本。④ 订阅积分不结转、Batch 不能用于实时对话、编程套餐不能接后端。⑤ <b>第 ④ 组是持平 / 更贵 / 口径陷阱</b>：Gemini 3.8 Flash 与官方同价，Qwen Plus 贵在阿里云国际站区域定价，都不是第三方加价；别默认「走聚合一定省」。⑥ 已失效别再找：GitHub Models 免费档 7/30 全线下线、Cerebras 永久免费取消、Hugging Face 免费额度取消、硅基流动永久免费小模型档已取消。⑦ 端点最低价若与缓存读价几乎同价（如 $0.006 输入 / $0.005 缓存读），多半是高缓存命中率折算出来的展示价，不代表普通输入便宜 96%；还要看托管方是不是厂商自营、有没有 Batch 变体、端点是否参与标准路由。⑧ <b>11/11 全表自查</b>：删去 3 条查无对应端点的报价（GLM 假 Batch −80%/−88%、Gemini 假 +10%、DeepSeek 首页 $0.006 当通用价），并合并 HY4 重复行；能同口径核实、确实比官方直连便宜的第三方端点本期只剩 MiniMax 一例。下单前点开每行来源复核，别把限时折扣当长期保价。</p>
   </section>
 
 </main>
@@ -421,7 +421,7 @@ const PRICE_DATA = {
     /* 月之暗面 / MiniMax / 小米 */
     {p:"月之暗面",m:"Kimi K3.1 Pro",      in:"2.00",  out:"10.00", cache:"—",     st:"down", note:"10/28 从 $3/$15 降到 $2/$10"},
     {p:"MiniMax", m:"M3",                 in:"0.30",  out:"1.20",  cache:"—",     st:"flat", note:"512K 输入，社区许可证；火山方舟 11/2 已下线"},
-    {p:"MiniMax", m:"M3.1 Flash",         in:"0.075", out:"0.30",  cache:"$0.0075",st:"down", note:"OpenRouter 端比官方 $0.15/$0.60 便宜一半；Agent 任务成本比前代降 70%"},
+    {p:"MiniMax", m:"M3.1 Flash",         in:"0.075", out:"0.30",  cache:"$0.0075",st:"down", note:"MiniMax 官方自营 OR 端点 $0.075/$0.30，比直连 ¥1/¥4 便宜约一半；12 家第三方端点仍 $0.15/$0.60"},
     {p:"小米",    m:"MiMo-V2.6-Pro",      in:"0.435", out:"0.87",  cache:"—",     st:"flat", note:"万亿参数 MIT 开源，接近 GPT-6 Sol 价格 1/10"},
     /* Meta */
     {p:"Meta",    m:"Muse Ember",         in:"0.10",  out:"0.50",  cache:"$0.004",st:"new",  focus:true, note:"11/9 新发；AA 36 同分 Haiku，每任务 $0.14 vs $0.41；子任务首选，闭源不可自部署"},
@@ -438,12 +438,10 @@ const PRICE_DATA = {
      tone：down=更便宜(绿) up=更贵(红) flat=持平或不可直接横比(灰) */
   channels: [
     /* ① 第三方托管 / 聚合路由 */
-    {g:"route", tag:"托管端点", m:"MiniMax M3.1 Flash", off:"$0.15 / $0.60", ch:"OpenRouter 低价端点", how:"第三方托管商报价，非官方降价", price:"$0.075 / $0.30", save:"输入 −50% · 输出 −50%", win:"常态；同模型 $0.11–$0.15 的端点也在列，按路由命中价结算", tone:"down", src:'<a href="https://platform.minimaxi.com/docs/guides/pricing-paygo" target="_blank" rel="noopener noreferrer">官方</a> · <a href="https://openrouter.ai/minimax/minimax-m3.1-flash" target="_blank" rel="noopener noreferrer">渠道</a>'},
-    {g:"route", tag:"端点极值", m:"DeepSeek V4.1 Flash 1017", off:"$0.15 / $0.60（闲时）", ch:"OpenRouter Floor 最低端点 Relace", how:"目录首页展示的是 40+ 端点里的最低一档；该端点缓存读 $0.005、命中率约 91%，低价主要来自缓存折算与补贴，吞吐仅 61 tok/s", price:"$0.006 / $0.50", unit:"$/1M · 仅该端点", save:"口径不可比（不是 −96%）", win:"11/11 回官方模型页核对：主流端点输入 $0.11–$0.30、输出 $0.50–$1.20，多数不比官方闲时便宜；按路由实际命中结算，别拿单点极值做预算", tone:"flat", src:'<a href="https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017" target="_blank" rel="noopener noreferrer">OpenRouter 模型页</a> · <a href="https://llmprice.gitlab.io/providers/openrouter" target="_blank" rel="noopener noreferrer">11/10 目录</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">DeepSeek 官方</a>'},
-    {g:"route", tag:"托管端点", m:"腾讯混元 HY4", off:"$0.834 / $2.501（目录价）", ch:"OpenRouter HY4 preview 端点", how:"11/4 上架即半价", price:"$0.417 / $1.2505", save:"输入 −50% · 输出 −50%", win:"与腾讯云按量 5 折同价；preview 已被正式版取代", tone:"down", src:'<a href="https://llmprice.gitlab.io/providers/openrouter" target="_blank" rel="noopener noreferrer">OpenRouter 目录</a> · <a href="https://openrouter.ai/tencent/hy4" target="_blank" rel="noopener noreferrer">模型页</a>'},
-    {g:"route", tag:"Batch 端点", m:"GLM-5.3-Flash", off:"$0.15 / $0.50", ch:"OpenRouter Batch 端点", how:"11/10 用量榜第三", price:"$0.03 / $0.06", save:"输入 −80% · 输出 −88%", win:"必须异步；不能跑实时对话 / Coding Agent", tone:"down", src:'<a href="https://open.bigmodel.cn/pricing" target="_blank" rel="noopener noreferrer">智谱价目</a> · <a href="https://whatstrending.ai/models" target="_blank" rel="noopener noreferrer">用量榜</a>'},
+    {g:"route", tag:"厂商自营端点", m:"MiniMax M3.1 Flash", off:"¥1 / ¥4 官方直连 ≈ $0.143 / $0.571", ch:"MiniMax 官方在 OpenRouter 的自营端点", how:"11/11 核 providers 表：这个 $0.075/$0.30 的低价端点由 MiniMax 自己托管，占该模型 84.9% 流量；另外 12 家第三方端点仍是 $0.15/$0.60", price:"$0.075 / $0.30", unit:"$/1M · 命中自营端点", save:"输入 −48% · 输出 −48%", win:"官方直连价目页 ¥1 / ¥4、缓存读 ¥0.10；只有路由命中自营端点才半价，别写成第三方降价", tone:"down", src:'<a href="https://platform.minimaxi.com/docs/guides/pricing-paygo" target="_blank" rel="noopener noreferrer">MiniMax 官方价目</a> · <a href="https://openrouter.ai/minimax/minimax-m3.1-flash" target="_blank" rel="noopener noreferrer">OR providers</a>'},
+    {g:"route", tag:"端点区间", m:"DeepSeek V4.1 Flash 1017", off:"$0.15 / $0.60（官方闲时）", ch:"OpenRouter 40+ 端点主流区间", how:"11/11 核 providers 表：DeepSeek 自营端点就是 $0.15/$0.60；主流第三方输入 $0.11–$0.30、输出 $0.50–$1.20", price:"$0.11–$0.30 / $0.50–$1.20", unit:"$/1M · 普通未缓存输入 / 输出", save:"基本持平", win:"首页 $0.006/$0.50 是 Relace 单端点（缓存读 $0.005、命中率约 91%、61 tok/s），不是通用价；按路由实际命中结算", tone:"flat", src:'<a href="https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017" target="_blank" rel="noopener noreferrer">OR providers</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">DeepSeek 官方</a>'},
     /* ② 官方限时折扣 / 订阅权益 */
-    {g:"official", tag:"官方折扣", m:"腾讯混元 HY4", off:"$0.834 / $2.501", ch:"腾讯云 TokenHub 按量 5 折", how:"官方活动，¥3 / ¥9 每百万", price:"$0.42 / $1.25", save:"输入 −50% · 输出 −50%", win:"到 12/31；2027/1/1 回目录价 ¥6 / ¥18", tone:"down", src:'<a href="https://cloud.tencent.com/document/product/1823/130055" target="_blank" rel="noopener noreferrer">腾讯云价目</a>'},
+    {g:"official", tag:"官方折扣", m:"腾讯混元 HY4", off:"$0.834 / $2.501", ch:"腾讯云 TokenHub 按量 5 折", how:"¥3 / ¥9 每百万；OR 上 tencent/hy4 唯一托管方也是腾讯云自营，同价 5 折", price:"$0.42 / $1.25", save:"输入 −50% · 输出 −50%", win:"到 12/31；2027/1/1 回目录价 ¥6 / ¥18；11/4 上架的是正式版，不是 preview", tone:"down", src:'<a href="https://cloud.tencent.com/document/product/1823/130055" target="_blank" rel="noopener noreferrer">腾讯云价目</a> · <a href="https://openrouter.ai/tencent/hy4" target="_blank" rel="noopener noreferrer">OR providers</a>'},
     {g:"official", tag:"订阅折扣", m:"腾讯混元 HY4（Token Plan）", off:"$0.834 / $2.501", ch:"Token Plan 积分 2.5 折", how:"¥1.5 / ¥4.5 每百万", price:"≈$0.214 / $0.643", save:"输入 −74% · 输出 −74%", win:"到 11/17 12:00；积分 ≠ Token", tone:"down", src:'<a href="https://cloud.tencent.com/document/product/1823/133811" target="_blank" rel="noopener noreferrer">Token Plan 规则</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">DeepSeek 官方</a>'},
     {g:"official", tag:"官方折扣", m:"DeepSeek V4.1-Flash", off:"$0.15 / $0.60（闲时）", ch:"腾讯云 Token Plan 4 折", how:"闲时约 ¥0.4 / ¥1.6", price:"≈$0.057 / $0.229", save:"输入 −62% · 输出 −62%", win:"到 11/16 12:00；Search / Fetch 各 $0.75 每千次另计", tone:"down", src:'<a href="https://cloud.tencent.com/document/product/1823/133811" target="_blank" rel="noopener noreferrer">Token Plan 规则</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">DeepSeek 官方</a>'},
     {g:"official", tag:"订阅折扣", m:"DeepSeek V4.1-Flash", off:"$0.15 / $0.60（闲时）", ch:"火山方舟 Coding Plan 约 3.5 折", how:"原 5 折再打 7 折", price:"≈$0.053 / $0.21", save:"约 −65%", win:"叠加窗口到 12/15；套餐不能接自动化脚本，首两月 2.5 折延至 2027/3/31", tone:"down", src:'<a href="https://www.volcengine.com/product/ark" target="_blank" rel="noopener noreferrer">火山方舟</a> · <a href="https://cloud.tencent.com/document/product/1823/133811" target="_blank" rel="noopener noreferrer">折扣规则</a>'},
@@ -458,8 +456,9 @@ const PRICE_DATA = {
     {g:"mech", tag:"闲时", m:"百度千帆 夜间指定模型", off:"按刊例价", ch:"22:00–08:00 2 折", how:"订阅 / 实名口径生效", price:"刊例 ×0.2", save:"−80%", win:"新客首购到 11/23；这轮公开可见的最大折扣", tone:"down", src:'<a href="https://cloud.baidu.com/product/wenxinworkshop" target="_blank" rel="noopener noreferrer">千帆</a>'},
     {g:"mech", tag:"资源包", m:"七牛云 1000 万 Token 秒杀包", off:"¥2 / ¥8（DeepSeek 高峰）", ch:"19.9 元资源包", how:"折合 ¥1.99 / 百万 Token，不区分输入输出", price:"¥1.99 / 百万", unit:"资源包口径", save:"约等于高峰输入单价", win:"到 12/31，限新客限购 1 个；资源包 ≠ 按量单价，别直接横比", tone:"flat", src:'<a href="https://news.qiniu.com/archives/1793870251368" target="_blank" rel="noopener noreferrer">七牛云 11/5 八入口横评</a>'},
     /* ④ 反例 */
-    {g:"warn", tag:"反例", m:"Gemini 3.8 Flash", off:"$0.75 / $3.75（Google 官方）", ch:"OpenRouter 挂牌", how:"11/6 核对，渠道反而加价", price:"$0.825 / $4.13", save:"+10%（更贵）", win:"别默认「走 OpenRouter 更便宜」", tone:"up", src:'<a href="https://claudegpt.si/news/ai-api-pricing" target="_blank" rel="noopener noreferrer">11/6 价目核对</a>'},
-    {g:"warn", tag:"反例", m:"Qwen Plus", off:"¥0.80 / ¥2.00（官方）", ch:"OpenRouter 挂牌", how:"11/4 核对", price:"$0.26 / $0.78 ≈ ¥1.82 / ¥5.46", save:"约 +128% / +173%（更贵）", win:"国内模型优先走官方或国内云", tone:"up", src:'<a href="https://www.aiplans.dev/en/models/qwen-plus" target="_blank" rel="noopener noreferrer">aiplans 11/4</a>'},
+    {g:"warn", tag:"缓存价误读", m:"GLM-5.3-Flash", off:"$0.15 / $0.50（Z.ai 自营端点）", ch:"OpenRouter 40+ 端点，无 Batch 变体", how:"11/11 核 providers 表：多数端点缓存读 $0.03，不是输入价；首页 $0.0399/$0.0784 是 Relace 单端点", price:"$0.108–$0.1875 / $0.24–$0.625", unit:"$/1M · 主流端点区间", save:"别把缓存价算成降价", win:"此前「Batch 端点 $0.03/$0.06、−80%/−88%」查无对应端点，已删；要省得靠缓存命中，不是 Batch", tone:"flat", src:'<a href="https://openrouter.ai/z-ai/glm-5.3-flash" target="_blank" rel="noopener noreferrer">OR providers</a> · <a href="https://open.bigmodel.cn/pricing" target="_blank" rel="noopener noreferrer">智谱价目</a>'},
+    {g:"warn", tag:"非标准路由", m:"Gemini 3.8 Flash", off:"$0.75 / $3.75（Google 官方）", ch:"OR 标准路由：Google Vertex / AI Studio", how:"11/11 核 providers 表：两家 Google 自营标准端点均 $0.75/$3.75（50% off 后），与官方同价", price:"$0.75 / $3.75", save:"持平，不是 +10%", win:"$0.825/$4.125 是「不参与标准路由」的 Vertex 端点；Flex $0.375/$1.875 同样不在标准路由，别当通用价", tone:"flat", src:'<a href="https://openrouter.ai/google/gemini-3.8-flash" target="_blank" rel="noopener noreferrer">OR providers</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google 官方</a>'},
+    {g:"warn", tag:"区域差价", m:"Qwen Plus", off:"¥0.80 / ¥2.00（百炼国内站）", ch:"阿里云国际站（OR 唯一 provider）", how:"11/11 核 providers 表：Alibaba Cloud Int. 独家托管 $0.26/$0.78，是同厂商国际站美元价，不是第三方转售加价", price:"$0.26 / $0.78 ≈ ¥1.82 / ¥5.46", save:"约 +128% / +173%（更贵）", win:"国内模型优先走国内站；别把国际站区域定价写成「渠道加价」", tone:"up", src:'<a href="https://openrouter.ai/qwen/qwen-plus" target="_blank" rel="noopener noreferrer">OR providers</a> · <a href="https://help.aliyun.com/zh/model-studio/" target="_blank" rel="noopener noreferrer">百炼价目</a>'},
     {g:"warn", tag:"持平", m:"Kimi K3.1 Pro", off:"$2.00 / $10.00", ch:"Together / OpenRouter 多数端点", how:"11/10 核对，基本同价", price:"$2.00 / $10.00", save:"持平（个别 $0.19 输入属异常路由）", win:"国内刊例 ¥13 / ¥68 ≈ $1.86 / $9.71 还略低", tone:"flat", src:'<a href="https://betonai.net/kimi-k3-1-pro-open-weights-benchmarks-price-verdict" target="_blank" rel="noopener noreferrer">11/10 核对</a> · <a href="https://news.qiniu.com/archives/1793870251368" target="_blank" rel="noopener noreferrer">七牛云 11/5 八入口横评</a>'}
   ]
 };
@@ -505,10 +504,10 @@ focus.forEach((d,i)=>{
 document.getElementById("cntAct").textContent = PRICE_DATA.focusItems.length;
 /* 渠道比价：按机制分组渲染，数据全部来自 PRICE_DATA.channels */
 const CH_GROUP = {
-  route:{name:"① 第三方托管 / 聚合路由（同一模型，端点不同价）", cls:""},
+  route:{name:"① 第三方托管 / 聚合路由（11/11 逐行核 providers 后的可对比项）", cls:""},
   official:{name:"② 官方限时折扣 / 订阅权益（不是第三方，但实付更低）", cls:"k-official"},
   mech:{name:"③ Batch / 闲时 / 资源包（机制型便宜，可长期复用）", cls:"k-mech"},
-  warn:{name:"④ 反例：这些渠道并不比官方便宜（别默认走聚合）", cls:"k-warn"}
+  warn:{name:"④ 持平 / 更贵 / 口径陷阱（别默认走聚合，也别信首页最低价）", cls:"k-warn"}
 };
 let lastG = "";
 document.getElementById("channelTbody").innerHTML = PRICE_DATA.channels.map(d=>{
