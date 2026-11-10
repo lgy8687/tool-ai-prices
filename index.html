@@ -260,7 +260,7 @@ const PRICE_DATA = {
     {p:"Anthropic",m:"Claude Sonnet 5.5", in:"2.00",  out:"10.00", cache:"$0.10", st:"flat", note:"缓存读 $0.10；编程第一梯队"},
     {p:"Anthropic",m:"Claude Haiku 5.5",  in:"0.10",  out:"0.50",  cache:"$0.01", st:"flat", note:"≤100K tokens 低价，超限整单 5 倍；同分下 Muse Ember 更便宜"},
     /* Google */
-    {p:"Google",  m:"Gemini 4 Carbon",    in:"2.00",  out:"10.00", cache:"$0.10", st:"new",  focus:true, note:"11/10 全面开放，AA 60；首发价到 11/30，12/1 起 $4/$20，Batch 半价"},
+    {p:"Google",  m:"Gemini 4 Carbon",    in:"2.00",  out:"10.00", cache:"$0.10", st:"new",  focus:true, note:"11/10 全面开放，AA 智能指数 59；首发价到 11/30，12/1 起 $4/$20，Batch 半价；比 Argon 更费 token"},
     {p:"Google",  m:"Gemini 4 Argon",     in:"2.00",  out:"10.00", cache:"$0.10", st:"up",   focus:true, note:"促销到 11/30，12/1 翻倍到 $4/$20；该跑的重活趁 11 月"},
     {p:"Google",  m:"Gemini 3.1 Pro",     in:"2.00",  out:"12.00", cache:"$0.20", st:"flat", note:"Preview，>200K 输入加价"},
     {p:"Google",  m:"Gemini 3.8 Flash",   in:"0.75",  out:"3.75",  cache:"$0.075",st:"up",   note:"促销到 12/31，2027/1/1 翻倍；多模态+1M 上下文"},
@@ -271,15 +271,15 @@ const PRICE_DATA = {
     {p:"DeepSeek",m:"V4-Pro",             in:"0.66",  out:"1.98",  cache:"$0.022",st:"flat", note:"硬核任务可用；V4.1 Pro 连续 7 期未发，别囤额度"},
     /* xAI（200K 内标准价） */
     {p:"xAI",     m:"Grok 4.7",           in:"2.00",  out:"6.00",  cache:"$0.50", st:"flat", note:"同档输出最便宜，500K 上下文；超 200K 翻倍"},
-    {p:"xAI",     m:"Grok 4.3 / 4.20",    in:"1.25",  out:"2.50",  cache:"$0.20", st:"flat", note:"1M 上下文，性价比档"},
+    {p:"xAI",     m:"Grok 4.3 / 4.20",    in:"1.25",  out:"2.50",  cache:"$0.20", st:"flat", note:"2M 上下文、渠道价，长文档批处理可试；非 xAI 官方牌价"},
     {p:"xAI",     m:"Grok Build 0.1",     in:"1.00",  out:"2.00",  cache:"$0.20", st:"flat", note:"256K 上下文，轻量构建"},
     /* 阿里 Qwen */
     {p:"阿里",    m:"Qwen3.8-Max",        in:"1.65",  out:"4.95",  cache:"—",     st:"down", note:"Global 站比新加坡站便宜 17.5%；双 11 全系 4.5 折，Token Plan 加量、Pro 降到 312 元/月"},
     {p:"阿里",    m:"Qwen3.8 Max Prime",  in:"4.00",  out:"12.00", cache:"—",     st:"flat", note:"速度税，能力没拉开差距"},
-    {p:"阿里",    m:"Qwen3.8 Flash",      in:"0.14",  out:"0.42",  cache:"—",     st:"flat", note:"国产低价档，输出便宜"},
+    {p:"阿里",    m:"Qwen3.8 Flash",      in:"0.14",  out:"0.42",  cache:"—",     st:"flat", note:"国产低价档；Token Plan 订阅制夜间 22:00–8:00 再 4 折，按量付费不适用"},
     /* 腾讯混元 */
     {p:"腾讯",    m:"混元 HY3",           in:"0.132", out:"0.528", cache:"$0.033",st:"flat", focus:true, note:"中文低价档最稳，连续 7 期未动；中文日常继续主力"},
-    {p:"腾讯",    m:"混元 HY4",           in:"0.42",  out:"1.25",  cache:"$0.021",st:"new",  focus:true, note:"11/4 正式版（5 折后实付，到 12/31）；Token Plan 2.5 折到 11/17，1M 上下文+图像"},
+    {p:"腾讯",    m:"混元 HY4",           in:"0.42",  out:"1.25",  cache:"$0.021",st:"new",  focus:true, note:"11/4 正式版（5 折后实付，到 12/31）；Token Plan 2.5 折到 11/17；WorkBuddy/CodeBuddy 11/4–11/15 有免费额度"},
     {p:"腾讯",    m:"混元 HY4 preview",   in:"0.834", out:"2.501", cache:"$0.042",st:"flat", note:"已被正式版取代，同规格却贵一倍"},
     /* 智谱 */
     {p:"智谱",    m:"GLM-5.3",            in:"1.40",  out:"4.40",  cache:"—",     st:"flat", note:"旗舰档，权重开放有条件"},
