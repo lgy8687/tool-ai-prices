@@ -226,7 +226,7 @@
 
 <main>
   <section id="focus" style="margin-top:0">
-    <p class="focus-hint">免费、限免、折扣、赠额、补贴，凡是能白拿或少花钱的都在这。按到期时间排，过期自动沉底；底部导航可直达各版块。</p>
+    <p class="focus-hint">免费、限免、折扣、赠额、补贴，凡是能白拿或少花钱的都在这。按到期时间排，过期自动沉底；底部导航可直达各版块。<b>价格表 3 天一核，最近核对 2026-11-13。</b></p>
     <div class="grid" id="grid"></div>
   </section>
 
@@ -247,7 +247,7 @@
   </section>
   <section id="cheaper-than-official">
     <h2>哪些主流模型在中转渠道比官方便宜？</h2>
-    <p class="diff-intro">11/5 逐站核对的结论：<b>同一个模型，厂商官方、阿里云百炼、火山方舟、七牛云 AI 广场的刊例价几乎完全一致</b>（Kimi K3.1 Pro ¥13/¥68、GLM-5.3 ¥8/¥28、DeepSeek V4.1 Flash 高峰 ¥2/¥8、闲时 ¥1/¥4，单位元 / 百万 Token）。真正拉开账单的是四种机制：第三方托管端点、官方限时折扣、Batch / 闲时、包月订阅。注意：聚合路由首页显示的是最低端点价，有些甚至是缓存读价或不参与标准路由的端点；本期已逐行打开 providers 列表核对托管方与口径，无法同口径对比的一律不进报价列。下表按这四类分列，价格统一折算美元 / 百万 Token（人民币按 1:7），核对日期 2026-11-11。</p>
+    <p class="diff-intro">11/5 逐站核对的结论：<b>同一个模型，厂商官方、阿里云百炼、火山方舟、七牛云 AI 广场的刊例价几乎完全一致</b>（Kimi K3.1 Pro ¥13/¥68、GLM-5.3 ¥8/¥28、DeepSeek V4.1 Flash 高峰 ¥2/¥8、闲时 ¥1/¥4，单位元 / 百万 Token）。真正拉开账单的是四种机制：第三方托管端点、官方限时折扣、Batch / 闲时、包月订阅。注意：聚合路由首页显示的是最低端点价，有些甚至是缓存读价或不参与标准路由的端点；本期已逐行打开 providers 列表核对托管方与口径，无法同口径对比的一律不进报价列。下表按这四类分列，价格统一折算美元 / 百万 Token（人民币按 1:7），核对日期 2026-11-13。</p>
     <div class="tablewrap">
       <table class="diff-table">
         <thead>
@@ -280,7 +280,7 @@
 <footer>
   数据来源：各厂商官方定价页、OpenRouter 模型渠道报价、七牛云 11/5 八入口横评 ·
   价格随时可能变动，下单前以厂商官网与渠道当期报价为准 · 涨跌标注以上一期价格为基准 ·
-  DeepSeek / xAI 等标注为闲时或短上下文标准价 · 渠道比价为 2026-11-11 公开报价快照，人民币按 1:7 折算，不代表该渠道全部模型 · 本期为第 24 期观察同步 · 上方优惠卡片墙收录本期全部免费 / 限免 / 折扣 / 赠额 / 补贴，按到期日自动倒计时、窗口过期自动沉底；  重复的「活动动态」清单已合并移除，常态档与失效提醒并入渠道比价口径说明
+  DeepSeek / xAI 等标注为闲时或短上下文标准价 · 渠道比价为 2026-11-13 公开报价快照，人民币按 1:7 折算，不代表该渠道全部模型 · 本期为第 25 期观察同步（价格表 3 天一核，焦点每日更新） · 上方优惠卡片墙收录本期全部免费 / 限免 / 折扣 / 赠额 / 补贴，按到期日自动倒计时、窗口过期自动沉底；  重复的「活动动态」清单已合并移除，常态档与失效提醒并入渠道比价口径说明
 </footer>
 
 <script>
@@ -289,7 +289,8 @@
    focusItems[] 优惠卡（方案 D）：模型名超大主角，big=免费/折扣/降价事件横条大字 + desc 说明；tone 配色；deadline 自动倒计时、排序、过期沉底；本期所有优惠都上焦点
    channels[] 渠道比价：按 g 分四组（route 托管端点 / official 官方折扣 / mech 机制型 / warn 反例），每行 m/off/ch/how/price/save/win/tone/src；由脚本渲染成表 */
 const PRICE_DATA = {
-  updatedAt: "2026-11-11",
+  updatedAt: "2026-11-13",
+  priceUpdatedAt: "2026-11-13",
   /* 本期焦点 —— 每期只改这一块。
      方案 D：模型名是主角，big 是跟在下面的事件横条大字（免费 / 1亿每日 / 4 折 / -20%），不是报价。
      tone 配色：free 绿 / discount 橙 / launch 蓝 / cut 紫 / steady 灰。
@@ -302,12 +303,21 @@ const PRICE_DATA = {
     {tag:"登录送",   tone:"free",     big:"5000万",   p:"智谱",      m:"AutoClaw 双11每周福利", in:"—", out:"—", deadline:"2026-11-15",
      desc:"11/9–11/15 登录国内版客户端即领 5000 万 Tokens（5000 积分），国际版 1 亿，老用户也能领；官网另挂新人 2 亿。",
      risk:"11/15 23:59 统一清零；只在客户端内抵 GLM-5.3-Flash，导不出 API Key。"},
-    {tag:"今天收口", tone:"free",     big:"0 积分",   p:"天工",      m:"SkyProduction 视频模型", in:"—", out:"—", deadline:"2026-11-11",
-     desc:"双11 期间 Seedance 2.5、Wan 3.0、可灵 4.0、MiniMax H3 等热门视频模型限时 0 积分，今天收口。",
-     risk:"只覆盖视频生成类；积分不结转，过了今天恢复原价。"},
-    {tag:"今天收口", tone:"free",     big:"2.7亿",    p:"魔芋 AI",   m:"双11 Token 狂欢",  in:"—", out:"—", deadline:"2026-11-11",
-     desc:"个人新客实名 1000 万 / 老用户回归 5000 万 / 企业认证 1 亿 / 邀请最高 1.6 亿，全任务合计最高 2.7 亿。",
-     risk:"2.7 亿是全任务加总上限，不是到手量；今天 11/11 收口。"},
+    {tag:"新模型",   tone:"launch",   big:"免费层",   p:"Google",    m:"Gemini 4 Hydrogen", in:"1.50", out:"7.50", deadline:"",
+     desc:"11/12 发布，$1.50 / $7.50、1M 上下文、隐式缓存 $0.075；AA 指数 51（默认高思考）比 Argon 高 1 分，Gemini 应用免费用户可能被自动选到。",
+     risk:"AA 独立实测 xhigh 档首字等 41 秒、跑完指数烧 3.04 亿 tokens，单任务约 $3.16；单价便宜不等于账单便宜，先小批量实测。"},
+    {tag:"预览折扣", tone:"discount", big:"0.4 折",   p:"阿里",      m:"Qwen4-Max-Preview", in:"—", out:"—", deadline:"2026-11-25",
+     desc:"11/11 10:00 放出的预览版，只在 Token Plan 套餐内开放；预览期 Credits 2 折，22:00–08:00 再叠 2 折，合计约 0.4 折。",
+     risk:"仅订阅套餐内生效，不是按量单价；Credits 抵扣系数未公开，先小额实测再跑批；预览版可能随时下线。"},
+    {tag:"限时折扣", tone:"free",     big:"权重免费", p:"MiniMax",   m:"H3-Image",         in:"—", out:"—", deadline:"",
+     desc:"11/11 发布即开源，4096×4096 约 16MP、10 秒出图，自部署零成本；API 侧首周 16MP 以上请求五折。",
+     risk:"API 五折按 11/11 起算首周，窗口所剩不多；开源权重自部署要自己出显卡钱，本周 GPU 租金还在涨。"},
+    {tag:"限免",     tone:"free",     big:"限免",     p:"阶跃星辰",  m:"stepaudio-3 全系",  in:"—", out:"—", deadline:"2026-11-17",
+     desc:"实时语音与 TTS 全系限免到 11/17 11:59，之后实时语音 0.65 元 / 会话分钟、TTS 95 元 / 百万计费字符。",
+     risk:"限免结束自动按新价计费；语音类不在通用 Token 价目表口径内，别拿去和文本模型比单价。"},
+    {tag:"海外免费", tone:"free",     big:"免费 TTS", p:"HeyGen",    m:"Voice Turbo Free",  in:"—", out:"—", deadline:"2026-11-30",
+     desc:"官方开发者文档写明 11/30 前免费 API 请求、不扣积分余额；持 HeyGen API Key 选 heygen-voice-1-turbo-free 即可。",
+     risk:"仅公共音色 / Voice 1 瞬时克隆，专业克隆不支持；每成员 30 次 / 分，官方说改期前会通知。"},
     {tag:"电商渠道", tone:"discount", big:"0.01元",   p:"天猫 / 京东", m:"双11 Token 包",  in:"—", out:"—", deadline:"2026-11-13",
      desc:"天猫「AI 空间站」、京东「AI 软件充值馆」双11 Token 包 0.01 元起，限新用户、每 ID 一单。",
      risk:"淘天 11/13 收口、京东 11/11 收口；月卡兑换截止 12/30，记得关自动续费。"},
@@ -393,6 +403,7 @@ const PRICE_DATA = {
     {p:"Anthropic",m:"Claude Sonnet 5.5", in:"2.00",  out:"10.00", cache:"$0.10", st:"flat", note:"缓存读 $0.10；编程第一梯队"},
     {p:"Anthropic",m:"Claude Haiku 5.5",  in:"0.10",  out:"0.50",  cache:"$0.01", st:"flat", note:"≤100K tokens 低价，超限整单 5 倍；同分下 Muse Ember 更便宜"},
     /* Google */
+    {p:"Google",  m:"Gemini 4 Hydrogen",  in:"1.50",  out:"7.50",  cache:"$0.075", st:"new", focus:true, note:"11/12 新发，$1.50/$7.50、1M 上下文、隐式缓存 $0.075；AA 51（默认高思考），免费层可用；AA 实测 xhigh 单任务约 $3.16，别只看单价"},
     {p:"Google",  m:"Gemini 4 Carbon",    in:"2.00",  out:"10.00", cache:"$0.10", st:"new",  focus:true, note:"11/10 全面开放，AA 智能指数 59；首发价到 11/30，12/1 起 $4/$20，Batch 半价；比 Argon 更费 token"},
     {p:"Google",  m:"Gemini 4 Argon",     in:"2.00",  out:"10.00", cache:"$0.10", st:"up",   focus:true, note:"促销到 11/30，12/1 翻倍到 $4/$20；该跑的重活趁 11 月"},
     {p:"Google",  m:"Gemini 3.1 Pro",     in:"2.00",  out:"12.00", cache:"$0.20", st:"flat", note:"Preview，>200K 输入加价"},
