@@ -226,7 +226,7 @@
 
 <main>
   <section id="focus" style="margin-top:0">
-    <p class="focus-hint">免费、限免、折扣、赠额、补贴，凡是能白拿或少花钱的都在这。按到期时间排，过期自动沉底；底部导航可直达各版块。<b>价格表 3 天一核，最近核对 2026-11-13。</b></p>
+    <p class="focus-hint">免费、限免、折扣、赠额、补贴，凡是能白拿或少花钱的都在这。按到期时间排，过期自动沉底；底部导航可直达各版块。<b>价格表 3 天一核，最近核对 2026-11-16。</b></p>
     <div class="grid" id="grid"></div>
   </section>
 
@@ -247,7 +247,7 @@
   </section>
   <section id="cheaper-than-official">
     <h2>哪些主流模型在中转渠道比官方便宜？</h2>
-    <p class="diff-intro">11/5 逐站核对的结论：<b>同一个模型，厂商官方、阿里云百炼、火山方舟、七牛云 AI 广场的刊例价几乎完全一致</b>（Kimi K3.1 Pro ¥13/¥68、GLM-5.3 ¥8/¥28、DeepSeek V4.1 Flash 高峰 ¥2/¥8、闲时 ¥1/¥4，单位元 / 百万 Token）。真正拉开账单的是四种机制：第三方托管端点、官方限时折扣、Batch / 闲时、包月订阅。注意：聚合路由首页显示的是最低端点价，有些甚至是缓存读价或不参与标准路由的端点；本期已逐行打开 providers 列表核对托管方与口径，无法同口径对比的一律不进报价列。下表按这四类分列，价格统一折算美元 / 百万 Token（人民币按 1:7），核对日期 2026-11-13。</p>
+    <p class="diff-intro">11/5 逐站核对的结论：<b>同一个模型，厂商官方、阿里云百炼、火山方舟、七牛云 AI 广场的刊例价几乎完全一致</b>（Kimi K3.1 Pro ¥13/¥68、GLM-5.3 ¥8/¥28、DeepSeek V4.1 Flash 高峰 ¥2/¥8、闲时 ¥1/¥4，单位元 / 百万 Token）。真正拉开账单的是四种机制：第三方托管端点、官方限时折扣、Batch / 闲时、包月订阅。注意：聚合路由首页显示的是最低端点价，有些甚至是缓存读价或不参与标准路由的端点；本期已逐行打开 providers 列表核对托管方与口径，无法同口径对比的一律不进报价列。下表按这四类分列，价格统一折算美元 / 百万 Token（人民币按 1:7），核对日期 2026-11-16。</p>
     <div class="tablewrap">
       <table class="diff-table">
         <thead>
@@ -280,7 +280,7 @@
 <footer>
   数据来源：各厂商官方定价页、OpenRouter 模型渠道报价、七牛云 11/5 八入口横评 ·
   价格随时可能变动，下单前以厂商官网与渠道当期报价为准 · 涨跌标注以上一期价格为基准 ·
-  DeepSeek / xAI 等标注为闲时或短上下文标准价 · 渠道比价为 2026-11-13 公开报价快照，人民币按 1:7 折算，不代表该渠道全部模型 · 本期为第 25 期观察同步（价格表 3 天一核，焦点每日更新） · 上方优惠卡片墙收录本期全部免费 / 限免 / 折扣 / 赠额 / 补贴，按到期日自动倒计时、窗口过期自动沉底；  重复的「活动动态」清单已合并移除，常态档与失效提醒并入渠道比价口径说明
+  DeepSeek / xAI 等标注为闲时或短上下文标准价 · 渠道比价为 2026-11-16 公开报价快照，人民币按 1:7 折算，不代表该渠道全部模型 · 本期为第 26 期观察同步（价格表 3 天一核，焦点每日更新） · 上方优惠卡片墙收录本期全部免费 / 限免 / 折扣 / 赠额 / 补贴，按到期日自动倒计时、窗口过期自动沉底；  重复的「活动动态」清单已合并移除，常态档与失效提醒并入渠道比价口径说明
 </footer>
 
 <script>
@@ -290,7 +290,7 @@
    channels[] 渠道比价：按 g 分四组（route 托管端点 / official 官方折扣 / mech 机制型 / warn 反例），每行 m/off/ch/how/price/save/win/tone/src；由脚本渲染成表 */
 const PRICE_DATA = {
   updatedAt: "2026-11-16",
-  priceUpdatedAt: "2026-11-13",
+  priceUpdatedAt: "2026-11-16",
   /* 本期焦点 —— 每期只改这一块。
      方案 D：模型名是主角，big 是跟在下面的事件横条大字（免费 / 1亿每日 / 4 折 / -20%），不是报价。
      tone 配色：free 绿 / discount 橙 / launch 蓝 / cut 紫 / steady 灰。
@@ -310,16 +310,52 @@ const PRICE_DATA = {
   "risk": "AA 独立实测 xhigh 档首字等 41 秒、跑完指数烧 3.04 亿 tokens，单任务约 $3.16；单价便宜不等于账单便宜，先小批量实测。"
  },
  {
-  "tag": "预览折扣",
-  "tone": "discount",
-  "big": "0.4 折",
+  "tag": "新模型",
+  "tone": "cut",
+  "big": "-58%",
   "p": "阿里",
-  "m": "Qwen4-Max-Preview",
+  "m": "Qwen4-Max",
+  "in": "1.50",
+  "out": "4.50",
+  "deadline": "",
+  "desc": "11/16 正式发：2.4T 总参、1M 上下文、原生视觉，国内 ¥10 / ¥30、国际站 $1.50 / $4.50、缓存 ¥0.5。Terminal-Bench 4.0 同档每次尝试 token 从 289K 降到 151K、得分 37.9→48.5，单任务平均成本降 58%。",
+  "risk": "AA 尚无独立评分、实测多在 Qoder 内，第三方横评还没出来；国内站 ¥10/¥30 折美元与 $1.50/$4.50 基本同价，别按汇率算两遍；预览版 11/25 从 Token Plan 撤下。"
+ },
+ {
+  "tag": "秒杀延期",
+  "tone": "discount",
+  "big": "0.1 元",
+  "p": "国家超算互联网",
+  "m": "5000 万 Token 量包",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-25",
-  "desc": "11/11 10:00 放出的预览版，只在 Token Plan 套餐内开放；预览期 Credits 2 折，22:00–08:00 再叠 2 折，合计约 0.4 折。",
-  "risk": "仅订阅套餐内生效，不是按量单价；Credits 抵扣系数未公开，先小额实测再跑批；预览版可能随时下线。"
+  "deadline": "2026-11-30",
+  "desc": "DeepSeek-V4.1-Flash / GLM-5.3-Flash 两款 5000 万 Token 量包 0.1 元秒杀，截止从 11/14 延到 11/30，每天 10:00 开卖；另新出 V4-Flash 5 亿量包 316 元（约 0.63 元 / 百万）。",
+  "risk": "纠正上期：11/15 曾按 11/14 收口把它下架，本次核到官方已延期。每账号 6 款特惠合计只能买 1 次，卖完即止；量包口径 ≠ 按量单价。"
+ },
+ {
+  "tag": "限时免费",
+  "tone": "free",
+  "big": "免费",
+  "p": "OpenCode",
+  "m": "内置免费模型池",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-11-23",
+  "desc": "不注册、不绑卡，OpenCode 内置 -free 后缀模型直接调：GLM-5.3-Flash、DeepSeek V4.1 Flash、LongCat 2.5、MiniMax M3.1 Flash、MiMo V2.6 Flash 等十余款；多数每天 50 次，LongCat 2.5 每天 100 次。",
+  "risk": "只能在 OpenCode 客户端内用，拿不到 API Key；按天刷不结转、速率低，别接生产。"
+ },
+ {
+  "tag": "每日免费",
+  "tone": "free",
+  "big": "800万/天",
+  "p": "智谱",
+  "m": "ZCode Start Plan",
+  "in": "—",
+  "out": "—",
+  "deadline": "",
+  "desc": "新用户连上 BigModel 自动到账：GLM-5.3 每天 300 万 + GLM-5.3-Flash 每天 500 万，连送 5 天共 4000 万；白天也能用，不用蹲夜间档。",
+  "risk": "按天发、不累积，仅客户端内额度；与「每天 3 亿夜间额度」「周末 5 亿包」是三套不同口子，别混着算。"
  },
  {
   "tag": "限时折扣",
@@ -358,18 +394,6 @@ const PRICE_DATA = {
   "risk": "仅公共音色 / Voice 1 瞬时克隆，专业克隆不支持；每成员 30 次 / 分，官方说改期前会通知。"
  },
  {
-  "tag": "限时折扣",
-  "tone": "discount",
-  "big": "4 折",
-  "p": "DeepSeek",
-  "m": "V4.1-Flash",
-  "in": "0.15",
-  "out": "0.60",
-  "deadline": "2026-11-16",
-  "desc": "腾讯云 Token Plan 4 折到 11/16 中午，闲时约 ¥0.4 / ¥1.6。缓存命中 $0.003 仍是全场最低。",
-  "risk": "按北京时间分峰谷；Search / Fetch 各 $0.75 每千次另算。"
- },
- {
   "tag": "订阅折扣",
   "tone": "discount",
   "big": "2.5 折",
@@ -378,8 +402,8 @@ const PRICE_DATA = {
   "in": "—",
   "out": "—",
   "deadline": "2026-11-17",
-  "desc": "11/4–11/17 用 Token Plan 个人版接 Hy4，积分抵扣低至 2.5 折：输入 ¥1.5 / 输出 ¥4.5 每百万。",
-  "risk": "中午 12:00 断；积分不等于 Token，数学与命令行类任务偏弱。"
+  "desc": "11/4–11/17 用 Token Plan 个人版接 Hy4，积分抵扣低至 2.5 折：输入 ¥1.5 / 输出 ¥4.5 每百万，明天 12:00 收官。",
+  "risk": "明天中午 12:00 断，之后回按量 5 折；积分不等于 Token，数学与命令行类任务偏弱。"
  },
  {
   "tag": "限免",
@@ -534,7 +558,7 @@ const PRICE_DATA = {
   "in": "—",
   "out": "—",
   "deadline": "",
-  "desc": "Free 公测档 ¥0/月，一个 Key 可跨厂商调 DeepSeek V4.1 Flash、GLM-5.2、Kimi K3 与自家 6.8 Flash Lite；每模型每 5 小时 1500 次。",
+  "desc": "Free 公测档 ¥0/月，最多开 20 个 API Key，覆盖 6.8 Flash Lite 与 U1 Fast 原生多模态；6.8 Flash 另有每 5 小时 1500 次免费请求。",
   "risk": "是滚动 5 小时 / 每周积分池，不是每天白送；限速 60 RPM，需手机号 + 实名，公测随时可能收。"
  },
  {
@@ -610,18 +634,6 @@ const PRICE_DATA = {
   "risk": "只有 Meta 自家 API，闭源不能自部署；世界知识弱，别拿它答开放域问题。"
  },
  {
-  "tag": "周末限免",
-  "tone": "free",
-  "big": "5亿",
-  "p": "智谱",
-  "m": "ZCode 周末包",
-  "in": "—",
-  "out": "—",
-  "deadline": "2026-11-16",
-  "desc": "11/13 23:00 起生效，5 亿 GLM-5.3-Flash tokens，周末跑量正合适；ZCode 每日 3 亿那档照常叠加。",
-  "risk": "仅客户端内额度 ≠ 可导出 API Key，11/16 09:00 到期清零。"
- },
-{
   "tag": "每周福利",
   "tone": "free",
   "big": "1亿",
@@ -632,8 +644,8 @@ const PRICE_DATA = {
   "deadline": "2026-11-22",
   "desc": "11/16–11/22 登录 AutoClaw 领 1 亿 Tokens（10,000 credits），比第二周的 5000 万翻倍；第二周那批今晚 23:59 清零，明天 0 点接棒。",
   "risk": "限领一次，领后到 11/22 23:59 统一过期；只在客户端内抵 GLM-5.3-Flash，导不出 API Key。"
-},
-{
+ },
+ {
   "tag": "语音新价",
   "tone": "cut",
   "big": "-50%",
@@ -644,8 +656,8 @@ const PRICE_DATA = {
   "deadline": "",
   "desc": "11/13 上线、11/14 定价落定：语音识别每小时音频 0.78 元限时 5 折实付 0.39 元（21 语种）、语音合成每万字符限时 5 折实付 1.5 元、文件解析 / OCR 每千页 1.5 元；第一次不按 token 收钱。",
   "risk": "限时 5 折未公布截止日；按小时 / 字符 / 页计价，不能与 token 单价横比。"
-},
-{
+ },
+ {
   "tag": "视频新价",
   "tone": "launch",
   "big": "0.2元/秒",
@@ -656,8 +668,8 @@ const PRICE_DATA = {
   "deadline": "",
   "desc": "11/14 千帆确认刊例 0.2 元/秒，比阿里 Wan3.0 的 0.21 再低一分，成当前视频生成最低公开价；同期文心一镜微表情 1080p 口播 0.7 元/秒。",
   "risk": "按秒计价不看 token；极速版与微表情版分工，画质要求高另选档。"
-},
-{
+ },
+ {
   "tag": "海外免费",
   "tone": "free",
   "big": "$100",
@@ -668,8 +680,8 @@ const PRICE_DATA = {
   "deadline": "",
   "desc": "PolyAI Dialog-RSN-1 语音对话 API 新账号送 $100（先到先得）；Gemini Decision 判定 / 分类模型输出 $0、输入 $0.10/M，免费层可用；Tavily 开 keyless 免 Key 搜索通道，带指定请求头直接调。",
   "risk": "PolyAI 额满即止；Gemini Decision 免费层数据用于改进产品、不支持 Batch 与缓存。"
-},
-{
+ },
+ {
   "tag": "语音免费档",
   "tone": "free",
   "big": "200万/年",
@@ -737,7 +749,7 @@ const PRICE_DATA = {
     {p:"OpenAI",  m:"GPT-6.1 Terra",      in:"1.00",  out:"5.00",  cache:"$0.05", st:"new",  focus:true, note:"10/26 上架，比 Sol 便宜一半、快 3 倍；跑量主力"},
     {p:"OpenAI",  m:"GPT-6 Sol",          in:"2.00",  out:"10.00", cache:"—",     st:"flat", note:"上一代同价在跑，可被 6.1 系替代"},
     {p:"OpenAI",  m:"GPT-6 Luna",         in:"0.10",  out:"0.50",  cache:"$0.01", st:"flat", note:"全场最低价档，Batch 再半价；子任务已被 Muse Ember 抢位"},
-    {p:"OpenAI",  m:"GPT-5.6 Sol",        in:"4.00",  out:"20.00", cache:"$0.40", st:"flat", note:"11 月涨价已被证伪；无价格优势，别充值"},
+    {p:"OpenAI",  m:"GPT-5.6 Sol",        in:"4.00",  out:"20.00", cache:"$0.40", st:"flat", note:"$4/$20 是促销价，官方写明「至少到 11/21」、牌价 $5/$30；11 月并未实涨，但别按促销价做长期预算"},
     {p:"OpenAI",  m:"GPT-5.6 Terra",      in:"2.00",  out:"12.00", cache:"—",     st:"flat", note:"涨价未发生，但已被 6.1 Terra 全面取代"},
     {p:"OpenAI",  m:"GPT-5.6 Luna",       in:"0.20",  out:"1.20",  cache:"—",     st:"flat", note:"已被 GPT-6 Luna 全面替代"},
     {p:"OpenAI",  m:"GPT-5.3 Codex",      in:"1.75",  out:"14.00", cache:"—",     st:"flat", note:"代码专用旧款，输出偏贵"},
@@ -756,19 +768,20 @@ const PRICE_DATA = {
     {p:"Google",  m:"Gemini 3.1 Flash-Lite",in:"0.25",out:"1.50",  cache:"$0.025",st:"flat", note:"Google 低价档"},
     {p:"Google",  m:"Gemini 2.5 Flash-Lite",in:"0.10",out:"0.40",  cache:"$0.01", st:"flat", note:"输出最便宜的预案之一"},
     /* DeepSeek（闲时价，高峰×2） */
-    {p:"DeepSeek",m:"V4.1-Flash",         in:"0.15",  out:"0.60",  cache:"$0.003",st:"flat", focus:true, note:"缓存命中全场最低；腾讯云 4 折到 11/16；Search/Fetch 另收 $0.75/千次"},
+    {p:"DeepSeek",m:"V4.1-Flash",         in:"0.15",  out:"0.60",  cache:"$0.003",st:"flat", focus:true, note:"缓存命中全场最低；腾讯云 4 折 11/16 12:00 收官；Search/Fetch 各 $0.75/千次，TTS $0.45/万字符（5 折 $0.225）、OCR $0.225/千页"},
     {p:"DeepSeek",m:"V4-Pro",             in:"0.66",  out:"1.98",  cache:"$0.022",st:"flat", note:"硬核任务可用；V4.1 Pro 连续 7 期未发，别囤额度"},
     /* xAI（200K 内标准价） */
     {p:"xAI",     m:"Grok 4.7",           in:"2.00",  out:"6.00",  cache:"$0.50", st:"flat", note:"同档输出最便宜，500K 上下文；超 200K 翻倍"},
     {p:"xAI",     m:"Grok 4.3 / 4.20",    in:"1.25",  out:"2.50",  cache:"$0.20", st:"flat", note:"2M 上下文、渠道价，长文档批处理可试；非 xAI 官方牌价"},
     {p:"xAI",     m:"Grok Build 0.1",     in:"1.00",  out:"2.00",  cache:"$0.20", st:"flat", note:"256K 上下文，轻量构建"},
     /* 阿里 Qwen */
-    {p:"阿里",    m:"Qwen3.8-Max",        in:"1.65",  out:"4.95",  cache:"—",     st:"down", note:"Global 站比新加坡站便宜 17.5%；双 11 全系 4.5 折，Token Plan 加量、Pro 降到 312 元/月"},
+    {p:"阿里",    m:"Qwen3.8-Max",        in:"1.65",  out:"4.95",  cache:"—",     st:"down", note:"已被 11/16 的 Qwen4-Max 取代（$1.50/$4.50 更便宜、token 用量少一半）；旧价保留备查"},
+    {p:"阿里",    m:"Qwen4-Max",           in:"1.50",  out:"4.50",  cache:"$0.075",st:"new", focus:true, note:"11/16 正式版：2.4T、1M 上下文、原生视觉；国内 ¥10/¥30、国际 $1.50/$4.50；Terminal-Bench 4.0 得分 37.9→48.5、同档 token 用量 -48%、单任务成本 -58%"},
     {p:"阿里",    m:"Qwen3.8 Max Prime",  in:"4.00",  out:"12.00", cache:"—",     st:"flat", note:"速度税，能力没拉开差距"},
     {p:"阿里",    m:"Qwen3.8 Flash",      in:"0.14",  out:"0.42",  cache:"—",     st:"flat", note:"国产低价档；Token Plan 订阅制夜间 22:00–8:00 再 4 折，按量付费不适用"},
     /* 腾讯混元 */
-    {p:"腾讯",    m:"混元 HY3",           in:"0.132", out:"0.528", cache:"$0.033",st:"flat", focus:true, note:"中文低价档最稳，连续 7 期未动；中文日常继续主力"},
-    {p:"腾讯",    m:"混元 HY4",           in:"0.42",  out:"1.25",  cache:"$0.021",st:"new",  focus:true, note:"11/4 正式版（5 折后实付，到 12/31）；Token Plan 2.5 折到 11/17；WorkBuddy/CodeBuddy 11/4–11/15 有免费额度"},
+    {p:"腾讯",    m:"混元 HY3",           in:"0.132", out:"0.528", cache:"$0.033",st:"flat", focus:true, note:"中文低价档最稳，连续 8 期未动；中文日常继续主力"},
+    {p:"腾讯",    m:"混元 HY4",           in:"0.42",  out:"1.25",  cache:"$0.021",st:"new",  focus:true, note:"11/4 正式版（5 折后实付，到 12/31）；Token Plan 2.5 折明天 11/17 12:00 收官；WorkBuddy 免费额度 11/15 已清零"},
     {p:"腾讯",    m:"混元 HY4 preview",   in:"0.834", out:"2.501", cache:"$0.042",st:"flat", note:"已被正式版取代，同规格却贵一倍"},
     /* 智谱 */
     {p:"智谱",    m:"GLM-5.3",            in:"1.40",  out:"4.40",  cache:"—",     st:"flat", note:"旗舰档，权重开放有条件"},
@@ -776,7 +789,7 @@ const PRICE_DATA = {
     {p:"智谱",    m:"GLM-4.7-Flash",      in:"0",     out:"0",     cache:"—",     st:"flat", note:"永久免费 API（open.bigmodel.cn）"},
     /* 月之暗面 / MiniMax / 小米 */
     {p:"月之暗面",m:"Kimi K3.1 Pro",      in:"2.00",  out:"10.00", cache:"—",     st:"down", note:"10/28 从 $3/$15 降到 $2/$10"},
-    {p:"MiniMax", m:"M3",                 in:"0.30",  out:"1.20",  cache:"—",     st:"flat", note:"512K 输入，社区许可证；火山方舟 11/2 已下线"},
+    {p:"MiniMax", m:"M3",                 in:"0.30",  out:"1.20",  cache:"—",     st:"flat", note:"512K 输入，社区许可证；火山方舟 11/2 已下线；M2.5 / M2.7 11/18 移出主列表，选型转 M3 / M3.1-Flash"},
     {p:"MiniMax", m:"M3.1 Flash",         in:"0.075", out:"0.30",  cache:"$0.0075",st:"down", note:"MiniMax 官方自营 OR 端点 $0.075/$0.30，比直连 ¥1/¥4 便宜约一半；12 家第三方端点仍 $0.15/$0.60"},
     {p:"小米",    m:"MiMo-V2.6-Pro",      in:"0.435", out:"0.87",  cache:"—",     st:"flat", note:"万亿参数 MIT 开源，接近 GPT-6 Sol 价格 1/10"},
     /* Meta */
@@ -787,6 +800,7 @@ const PRICE_DATA = {
     {p:"Mistral", m:"Large 3",            in:"0.50",  out:"1.50",  cache:"—",     st:"flat", note:"Apache 2.0，欧盟数据驻留友好"},
     {p:"Mistral", m:"Small 4",            in:"0.15",  out:"0.60",  cache:"—",     st:"flat", note:"开源轻量，欧洲合规之选"},
     {p:"Mistral", m:"Medium 3.5",         in:"1.50",  out:"7.50",  cache:"—",     st:"flat", note:"中间档，存在感一般"},
+    {p:"华为",    m:"openPangu-2.1-Pro",   in:"0.11",  out:"0.45",  cache:"$0.002",st:"new", note:"11/15 上线（贵阳一区）：¥0.8/¥3.2、512K 上下文、缓存 ¥0.016；Pangu 2.0 Pro/Flash 11/30 下线"},
     {p:"Mistral", m:"Codestral 25.08",    in:"0.30",  out:"0.90",  cache:"—",     st:"flat", note:"代码专用，128K 上下文"}
   ],
   /* 渠道比价 —— 每期按官方页与渠道报价复核，价格单位统一在 price / unit 字段。
@@ -799,10 +813,9 @@ const PRICE_DATA = {
     /* ② 官方限时折扣 / 订阅权益 */
     {g:"official", tag:"官方折扣", m:"腾讯混元 HY4", off:"$0.834 / $2.501", ch:"腾讯云 TokenHub 按量 5 折", how:"¥3 / ¥9 每百万；OR 上 tencent/hy4 唯一托管方也是腾讯云自营，同价 5 折", price:"$0.42 / $1.25", save:"输入 −50% · 输出 −50%", win:"到 12/31；2027/1/1 回目录价 ¥6 / ¥18；11/4 上架的是正式版，不是 preview", tone:"down", src:'<a href="https://cloud.tencent.com/document/product/1823/130055" target="_blank" rel="noopener noreferrer">腾讯云价目</a> · <a href="https://openrouter.ai/tencent/hy4" target="_blank" rel="noopener noreferrer">OR providers</a>'},
     {g:"official", tag:"订阅折扣", m:"腾讯混元 HY4（Token Plan）", off:"$0.834 / $2.501", ch:"Token Plan 积分 2.5 折", how:"¥1.5 / ¥4.5 每百万", price:"≈$0.214 / $0.643", save:"输入 −74% · 输出 −74%", win:"到 11/17 12:00；积分 ≠ Token", tone:"down", src:'<a href="https://cloud.tencent.com/document/product/1823/133811" target="_blank" rel="noopener noreferrer">Token Plan 规则</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">DeepSeek 官方</a>'},
-    {g:"official", tag:"官方折扣", m:"DeepSeek V4.1-Flash", off:"$0.15 / $0.60（闲时）", ch:"腾讯云 Token Plan 4 折", how:"闲时约 ¥0.4 / ¥1.6", price:"≈$0.057 / $0.229", save:"输入 −62% · 输出 −62%", win:"到 11/16 12:00；Search / Fetch 各 $0.75 每千次另计", tone:"down", src:'<a href="https://cloud.tencent.com/document/product/1823/133811" target="_blank" rel="noopener noreferrer">Token Plan 规则</a> · <a href="https://api-docs.deepseek.com/quick_start/pricing/" target="_blank" rel="noopener noreferrer">DeepSeek 官方</a>'},
     {g:"official", tag:"订阅折扣", m:"DeepSeek V4.1-Flash", off:"$0.15 / $0.60（闲时）", ch:"火山方舟 Coding Plan 约 3.5 折", how:"原 5 折再打 7 折", price:"≈$0.053 / $0.21", save:"约 −65%", win:"叠加窗口到 12/15；套餐不能接自动化脚本，首两月 2.5 折延至 2027/3/31", tone:"down", src:'<a href="https://www.volcengine.com/product/ark" target="_blank" rel="noopener noreferrer">火山方舟</a> · <a href="https://cloud.tencent.com/document/product/1823/133811" target="_blank" rel="noopener noreferrer">折扣规则</a>'},
     {g:"official", tag:"闲时", m:"Qwen3.8 Flash", off:"$0.14 / $0.42", ch:"阿里 Token Plan 夜间 4 折", how:"22:00–08:00 只扣四成额度", price:"≈$0.056 / $0.168", save:"−60%", win:"到 11/30；仅订阅制，按量付费不适用", tone:"down", src:'<a href="https://help.aliyun.com/zh/model-studio/" target="_blank" rel="noopener noreferrer">百炼价目</a>'},
-    {g:"official", tag:"官方折扣", m:"Qwen3.8-Max", off:"$1.65 / $4.95", ch:"阿里双 11 全系 4.5 折", how:"Global 站口径", price:"≈$0.743 / $2.228", save:"−55%", win:"到 11/30；新加坡站贵 17.5%，Token Plan Pro 已降到 312 元/月", tone:"down", src:'<a href="https://help.aliyun.com/zh/model-studio/" target="_blank" rel="noopener noreferrer">百炼价目</a>'},
+    {g:"official", tag:"节省计划", m:"百炼 150+ 直供模型（含 Qwen4-Max）", off:"按各模型刊例价", ch:"AI 通用节省计划 包季 4.5 折", how:"购买后自动抵扣按量账单，优先消耗额度，耗尽回原价", price:"刊例 ×0.45", save:"−55%", win:"与 Token Plan 相互独立、账单不互抵；可与上下文缓存折扣叠加；领券资格以百炼活动页为准", tone:"down", src:'<a href="https://developer.aliyun.com/article/1783471" target="_blank" rel="noopener noreferrer">阿里云百炼 11 月活动页</a>'},
     {g:"official", tag:"包月订阅", m:"GLM-5.3（七牛云企业订阅）", off:"¥8 / ¥28 刊例", ch:"Token Plan B 档 5 折", how:"月付 ¥9,999，刊例 ×0.5", price:"¥4 / ¥14", unit:"元 / 百万 Token", save:"−50%", win:"闲时 18:00–08:00 再 ×0.3 → ¥1.2 / ¥4.2（−85%）；积分周清零、超额直接拒", tone:"down", src:'<a href="https://news.qiniu.com/archives/1793870251368" target="_blank" rel="noopener noreferrer">七牛云 11/5 八入口横评</a>'},
     /* ③ Batch / 闲时 / 资源包 */
     {g:"mech", tag:"Batch", m:"Gemini 4 Carbon", off:"$2.00 / $10.00（首发价）", ch:"Google / OpenRouter Batch", how:"批量异步半价", price:"$1.00 / $5.00", save:"输入 −50% · 输出 −50%", win:"首发价 11/30 止；12/1 正价 $4 / $20，Batch 后 $2 / $10", tone:"down", src:'<a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google 官方</a> · <a href="https://openrouter.ai/google/gemini-4-carbon:batch" target="_blank" rel="noopener noreferrer">Batch</a>'},
@@ -815,6 +828,7 @@ const PRICE_DATA = {
     {g:"warn", tag:"缓存价误读", m:"GLM-5.3-Flash", off:"$0.15 / $0.50（Z.ai 自营端点）", ch:"OpenRouter 40+ 端点，无 Batch 变体", how:"11/11 核 providers 表：多数端点缓存读 $0.03，不是输入价；首页 $0.0399/$0.0784 是 Relace 单端点", price:"$0.108–$0.1875 / $0.24–$0.625", unit:"$/1M · 主流端点区间", save:"别把缓存价算成降价", win:"此前「Batch 端点 $0.03/$0.06、−80%/−88%」查无对应端点，已删；要省得靠缓存命中，不是 Batch", tone:"flat", src:'<a href="https://openrouter.ai/z-ai/glm-5.3-flash" target="_blank" rel="noopener noreferrer">OR providers</a> · <a href="https://open.bigmodel.cn/pricing" target="_blank" rel="noopener noreferrer">智谱价目</a>'},
     {g:"warn", tag:"非标准路由", m:"Gemini 3.8 Flash", off:"$0.75 / $3.75（Google 官方）", ch:"OR 标准路由：Google Vertex / AI Studio", how:"11/11 核 providers 表：两家 Google 自营标准端点均 $0.75/$3.75（50% off 后），与官方同价", price:"$0.75 / $3.75", save:"持平，不是 +10%", win:"$0.825/$4.125 是「不参与标准路由」的 Vertex 端点；Flex $0.375/$1.875 同样不在标准路由，别当通用价", tone:"flat", src:'<a href="https://openrouter.ai/google/gemini-3.8-flash" target="_blank" rel="noopener noreferrer">OR providers</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google 官方</a>'},
     {g:"warn", tag:"区域差价", m:"Qwen Plus", off:"¥0.80 / ¥2.00（百炼国内站）", ch:"阿里云国际站（OR 唯一 provider）", how:"11/11 核 providers 表：Alibaba Cloud Int. 独家托管 $0.26/$0.78，是同厂商国际站美元价，不是第三方转售加价", price:"$0.26 / $0.78 ≈ ¥1.82 / ¥5.46", save:"约 +128% / +173%（更贵）", win:"国内模型优先走国内站；别把国际站区域定价写成「渠道加价」", tone:"up", src:'<a href="https://openrouter.ai/qwen/qwen-plus" target="_blank" rel="noopener noreferrer">OR providers</a> · <a href="https://help.aliyun.com/zh/model-studio/" target="_blank" rel="noopener noreferrer">百炼价目</a>'},
+    {g:"warn", tag:"区域差价", m:"Qwen4-Max", off:"¥10 / ¥30（百炼国内站，隐式缓存 ¥0.5）", ch:"阿里云国际站（QwenCloud）", how:"11/16 首发价 $1.50 / $4.50、缓存 $0.075，折人民币约 ¥10.7 / ¥32.2", price:"$1.50 / $4.50", save:"与国内站基本持平（约 +7%），缓存价国内更低", win:"两地同价首发，别当「国际站加价」；Token Plan 内另按 Credits 抵扣，与按量价不可直接横比", tone:"flat", src:'<a href="https://news.qq.com/rain/a/20261116A06IGA00" target="_blank" rel="noopener noreferrer">千问 AI 平台首发公告</a> · <a href="https://aifirstlook.com/qwen-4" target="_blank" rel="noopener noreferrer">Qwen4-Max 价格核对</a>'},
     {g:"warn", tag:"持平", m:"Kimi K3.1 Pro", off:"$2.00 / $10.00", ch:"Together / OpenRouter 多数端点", how:"11/10 核对，基本同价", price:"$2.00 / $10.00", save:"持平（个别 $0.19 输入属异常路由）", win:"国内刊例 ¥13 / ¥68 ≈ $1.86 / $9.71 还略低", tone:"flat", src:'<a href="https://betonai.net/kimi-k3-1-pro-open-weights-benchmarks-price-verdict" target="_blank" rel="noopener noreferrer">11/10 核对</a> · <a href="https://news.qiniu.com/archives/1793870251368" target="_blank" rel="noopener noreferrer">七牛云 11/5 八入口横评</a>'}
   ]
 };
