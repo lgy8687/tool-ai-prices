@@ -289,7 +289,7 @@
    focusItems[] 优惠卡（方案 D）：模型名超大主角，big=免费/折扣/降价事件横条大字 + desc 说明；tone 配色；deadline 自动倒计时、排序、过期沉底；本期所有优惠都上焦点
    channels[] 渠道比价：按 g 分四组（route 托管端点 / official 官方折扣 / mech 机制型 / warn 反例），每行 m/off/ch/how/price/save/win/tone/src；由脚本渲染成表 */
 const PRICE_DATA = {
-  updatedAt: "2026-11-16",
+  updatedAt: "2026-11-17",
   priceUpdatedAt: "2026-11-16",
   /* 本期焦点 —— 每期只改这一块。
      方案 D：模型名是主角，big 是跟在下面的事件横条大字（免费 / 1亿每日 / 4 折 / -20%），不是报价。
@@ -342,7 +342,7 @@ const PRICE_DATA = {
   "in": "—",
   "out": "—",
   "deadline": "2026-11-23",
-  "desc": "不注册、不绑卡，OpenCode 内置 -free 后缀模型直接调：GLM-5.3-Flash、DeepSeek V4.1 Flash、LongCat 2.5、MiniMax M3.1 Flash、MiMo V2.6 Flash 等十余款；多数每天 50 次，LongCat 2.5 每天 100 次。",
+  "desc": "不注册、不绑卡，OpenCode 内置 -free 后缀模型直接调：GLM-5.3-Flash、DeepSeek V4.1 Flash、LongCat 2.5、MiniMax M3.1 Flash、MiMo V2.6 Flash 等 15 款（11/16 新增 Hy4 flash Free）；多数每天 50 次，LongCat 2.5 每天 100 次。",
   "risk": "只能在 OpenCode 客户端内用，拿不到 API Key；按天刷不结转、速率低，别接生产。"
  },
  {
@@ -370,16 +370,28 @@ const PRICE_DATA = {
   "risk": "API 五折按 11/11 起算首周，窗口所剩不多；开源权重自部署要自己出显卡钱，本周 GPU 租金还在涨。"
  },
  {
-  "tag": "限免",
+  "tag": "新人额度",
   "tone": "free",
-  "big": "限免",
-  "p": "阶跃星辰",
-  "m": "stepaudio-3 全系",
+  "big": "100万",
+  "p": "阿里",
+  "m": "Qwen4-Max 免费额度",
+  "in": "1.50",
+  "out": "4.50",
+  "deadline": "",
+  "desc": "11/16 正式版上线即带新人额度：北京（百炼华北 2）100 万 tokens、90 天内有效，够把 Qwen4-Max 跑一轮真实任务；国内刊例 ¥10 / ¥30、缓存 ¥0.5。",
+  "risk": "只在华北 2（北京）地域；切别的地域或走 QwenCloud 新加坡站直接按量扣费，两套价目别混算；不支持 Batch 半价。"
+ },
+ {
+  "tag": "学术赠额",
+  "tone": "free",
+  "big": "5万名额",
+  "p": "OpenAI",
+  "m": "ChatGPT 学术研究计划",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-17",
-  "desc": "实时语音与 TTS 全系限免到 11/17 11:59，之后实时语音 0.65 元 / 会话分钟、TTS 95 元 / 百万计费字符。",
-  "risk": "限免结束自动按新价计费；语音类不在通用 Token 价目表口径内，别拿去和文本模型比单价。"
+  "deadline": "2026-11-23",
+  "desc": "11/23 开放新一轮申请，前 5 万名合资格者先到先得（不再抽签），每份含本人 + 最多 2 位协作者，三人免费用 ChatGPT Plus 12 个月。",
+  "risk": "限高校 / 研究机构在职教职与博士后、近三年需 arXiv / bioRxiv / ChemRxiv 署名论文，机构邮箱 + SheerID 核验；本轮由 Pro 降为 Plus，且不含 API 额度。"
  },
  {
   "tag": "海外免费",
@@ -401,9 +413,9 @@ const PRICE_DATA = {
   "m": "HY4 Token Plan",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-17",
-  "desc": "11/4–11/17 用 Token Plan 个人版接 Hy4，积分抵扣低至 2.5 折：输入 ¥1.5 / 输出 ¥4.5 每百万，明天 12:00 收官。",
-  "risk": "明天中午 12:00 断，之后回按量 5 折；积分不等于 Token，数学与命令行类任务偏弱。"
+  "deadline": "2026-11-30",
+  "desc": "11/4 起用 Token Plan 个人版接 Hy4，积分抵扣低至 2.5 折：输入 ¥1.5 / 输出 ¥4.5 / 缓存 ¥0.075 每百万，是 Hy4 全场最低口径。",
+  "risk": "纠正本看板 11/16 版：腾讯云官方文档写明活动到 11/30 12:00，不是 11/17 收官（多家快报写错）；积分 ≠ Token，且只在订阅套餐内生效，按量付费吃不到。"
  },
  {
   "tag": "限免",
@@ -679,7 +691,7 @@ const PRICE_DATA = {
   "out": "—",
   "deadline": "",
   "desc": "PolyAI Dialog-RSN-1 语音对话 API 新账号送 $100（先到先得）；Gemini Decision 判定 / 分类模型输出 $0、输入 $0.10/M，免费层可用；Tavily 开 keyless 免 Key 搜索通道，带指定请求头直接调。",
-  "risk": "PolyAI 额满即止；Gemini Decision 免费层数据用于改进产品、不支持 Batch 与缓存。"
+  "risk": "PolyAI 官方补了截止日：$100 只给 11/19 前注册的新账号，额满即止；Gemini Decision 免费层数据用于改进产品、不支持 Batch 与缓存。"
  },
  {
   "tag": "语音免费档",
@@ -718,16 +730,28 @@ const PRICE_DATA = {
   "risk": "官方未写时区，按 11/18 收口预期；限免费档内用量。"
  },
  {
-  "tag": "每日免费",
+  "tag": "新模型",
+  "tone": "discount",
+  "big": "5 折",
+  "p": "腾讯",
+  "m": "Hy4 flash",
+  "in": "0.035",
+  "out": "0.14",
+  "deadline": "2026-11-30",
+  "desc": "11/16 发布：224B 总参 / 12B 激活、1M 上下文、原生多模态；目录价 ¥0.5 / ¥2 / 缓存 ¥0.02，TokenHub 五折到 11/30 12:00，折后 ¥0.25 / ¥1 / 缓存 ¥0.01，是目前最便宜的国产原生多模态档。",
+  "risk": "五折到 11/30 中午 12:00 为止，不是「用到月底」；官方「单任务成本是 Hy4 的 1/20」是厂商口径，按自己的活实测；「计划开源」只是计划。"
+ },
+ {
+  "tag": "客户端免费",
   "tone": "free",
-  "big": "20次/日",
-  "p": "Itzi",
-  "m": "DeepSeek V4.1 Flash",
+  "big": "免费",
+  "p": "腾讯 / WorkBuddy",
+  "m": "Hy4 flash 客户端",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-17",
-  "desc": "每天 20 次免费请求，网页聊天与 API 通用，小批量试 DeepSeek 便宜。",
-  "risk": "每日 20 次封顶，北京时间 11/17 08:00 到期。"
+  "deadline": "2026-11-30",
+  "desc": "WorkBuddy 模型选择器已上 Hy4 flash，11/30 前限时免费：每天给一份免费额度，用完才扣 credits。文档处理、PPT、简单前端、电脑操作这类日常活直接扔给它，付费积分留给硬任务。",
+  "risk": "只在客户端内、导不出 API Key，每日额度当天清零；默认 300K 上下文，调到 600K / 960K 会更快吃光额度；与 TokenHub API 五折是两条独立通道。"
  },
  {
   "tag": "视频新价",
