@@ -289,7 +289,7 @@
    focusItems[] 优惠卡（方案 D）：模型名超大主角，big=免费/折扣/降价事件横条大字 + desc 说明；tone 配色；deadline 自动倒计时、排序、过期沉底；本期所有优惠都上焦点
    channels[] 渠道比价：按 g 分四组（route 托管端点 / official 官方折扣 / mech 机制型 / warn 反例），每行 m/off/ch/how/price/save/win/tone/src；由脚本渲染成表 */
 const PRICE_DATA = {
-  updatedAt: "2026-11-17",
+  updatedAt: "2026-11-18",
   priceUpdatedAt: "2026-11-16",
   /* 本期焦点 —— 每期只改这一块。
      方案 D：模型名是主角，big 是跟在下面的事件横条大字（免费 / 1亿每日 / 4 折 / -20%），不是报价。
@@ -706,28 +706,28 @@ const PRICE_DATA = {
   "risk": "个人 / 企业包互斥；付费套餐 3000 元起才有 5 路并发。"
  },
  {
-  "tag": "图像折扣",
-  "tone": "discount",
-  "big": "5 折",
-  "p": "MiniMax",
-  "m": "H3-Image 首周折扣",
+  "tag": "超低价新模型",
+  "tone": "cut",
+  "big": "1%",
+  "p": "书生·端砚",
+  "m": "书生-S2.1 Flash",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-18",
-  "desc": "16MP 以上请求按张五折（按 11/11 发布起算）；权重已开源，自部署零成本，量大先自部署。",
-  "risk": "窗口 11/18 收口；自部署注意显存门槛。"
+  "deadline": "2026-12-09",
+  "desc": "11/16 发布并开源（320B MoE、MIT 权重）：端砚 API 上线价只收对标 GLM-5.3-Flash 的 1%，12/10–12/31 回落到 10%。MLE-bench Lite 90.3 分居参评首位，能读分子 / 光谱 / 蛋白序列并操作科研软件，写代码跑 Agent 也不弱。",
+  "risk": "1% 是按对标模型牌价折算、不是固定单价，实际账单看端砚计费；只到 12/9，之后涨到 10%；科学多模态是强项，通用中文写作未必比 GLM / HY 顺手。"
  },
  {
-  "tag": "免费窗口",
+  "tag": "免费额度",
   "tone": "free",
-  "big": "免费档",
-  "p": "Google",
-  "m": "Antigravity × Claude 4.6",
+  "big": "1亿",
+  "p": "云知声",
+  "m": "U2-Flash",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-18",
-  "desc": "Antigravity 免费档与 Google AI Plus 可继续用 Claude Sonnet / Opus 4.6，白嫖旗舰的机会。",
-  "risk": "官方未写时区，按 11/18 收口预期；限免费档内用量。"
+  "deadline": "2026-11-20",
+  "desc": "新用户注册领 1 亿 Token 免费档；今天（11/18）刚发 U2-Flash-1118，加约 1B 参数视觉模块，OCRBench-V2 中英文均超 DeepSeek-V4.1-Flash 与 GLM-5.3-Flash，同任务总 token 少 37%、模型调用次数少 44.8%。",
+  "risk": "截止日 11/20 是情报站口径，官方页未标硬日期（另一口径写「未定」），以控制台领取页为准；token 效率是厂商自测，按自己的活复测。"
  },
  {
   "tag": "新模型",
