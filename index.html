@@ -292,7 +292,7 @@
    focusItems[] 优惠卡（方案 D）：模型名超大主角，big=免费/折扣/降价事件横条大字 + desc 说明；tone 配色；deadline 自动倒计时、排序、过期沉底；本期所有优惠都上焦点
    channels[] 渠道比价：按 g 分四组（route 托管端点 / official 官方折扣 / mech 机制型 / warn 反例），每行 m/off/ch/how/price/save/win/tone/src；由脚本渲染成表 */
 const PRICE_DATA = {
-  updatedAt: "2026-11-19",
+  updatedAt: "2026-11-20",
   priceUpdatedAt: "2026-11-19",
   /* 本期焦点 —— 每期只改这一块。
      方案 D：模型名是主角，big 是跟在下面的事件横条大字（免费 / 1亿每日 / 4 折 / -20%），不是报价。
@@ -349,7 +349,7 @@ const PRICE_DATA = {
   "out": "—",
   "deadline": "2026-11-23",
   "url": "https://opencode.ai/",
-  "desc": "不注册、不绑卡，OpenCode 内置 -free 后缀模型直接调：GLM-5.3-Flash、DeepSeek V4.1 Flash、LongCat 2.5、MiniMax M3.1 Flash、MiMo V2.6 Flash 等 15 款（11/16 新增 Hy4 flash Free）；多数每天 50 次，LongCat 2.5 每天 100 次。",
+  "desc": "不注册、不绑卡，OpenCode 内置 -free 后缀模型直接调：GLM-5.3-Flash、DeepSeek V4.1 Flash、LongCat 2.5、MiniMax M3.1 Flash、MiMo V2.6 Flash 等十余款（11/16 新增 Hy4 flash Free；11/18 起 GLM-5.3-Flash Free 已从池中下线）；多数每天 50 次，LongCat 2.5 每天 100 次。",
   "risk": "只能在 OpenCode 客户端内用，拿不到 API Key；按天刷不结转、速率低，别接生产。"
  },
  {
@@ -765,8 +765,8 @@ const PRICE_DATA = {
   "out": "—",
   "deadline": "2026-11-20",
   "url": "https://www.unisound.com/",
-  "desc": "新用户注册领 1 亿 Token 免费档；11/18 刚发 U2-Flash-1118，加约 1B 参数视觉模块，OCRBench-V2 中英文均超 DeepSeek-V4.1-Flash 与 GLM-5.3-Flash，同任务总 token 少 37%、模型调用次数少 44.8%。",
-  "risk": "截止日 11/20 是情报站口径，官方页未标硬日期（另一口径写「未定」），以控制台领取页为准；token 效率是厂商自测，按自己的活复测。"
+  "desc": "新用户注册领 1 亿 Token 免费档，今天 24:00 是最后窗口；11/18 刚发 U2-Flash-1118，加约 1B 参数视觉模块，OCRBench-V2 中英文均超 DeepSeek-V4.1-Flash 与 GLM-5.3-Flash，同任务总 token 少 37%、模型调用次数少 44.8%。",
+  "risk": "今天 24:00 收口，多源口径一致但仍以控制台领取页为准，别拖到晚上；领完转付费走 U2-Flash-1118 限时六折（¥0.6/¥1.2、缓存 ¥0.02），token 效率是厂商自测，按自己的活复测。"
  },
  {
   "tag": "新模型",
@@ -845,6 +845,45 @@ const PRICE_DATA = {
   "url": "https://cloud.baidu.com/product/wenxinworkshop",
   "desc": "百川 AI 新号一次性送 ¥80（约 1000 万 tokens、3 个月、无需绑卡）；百度千帆 17 款模型各送 100 万 tokens（3 个月、仅在线推理）；AMD Token Lab 开发者会员送 10 点数、30 天访问 AMD 卡托管的开源模型（DeepSeek V4 / Qwen3.8 / GLM-5.3 等）。",
   "risk": "三笔都是一次性注册额度、3 个月有效不刷新；AMD 点数按模型扣、口径各家不通用；GonkaRouter / Vectoree 这类送额度的第三方网关有中转风险，别传隐私代码。"
+},
+{
+  "tag": "夜间折扣",
+  "tone": "discount",
+  "big": "2.5 折",
+  "p": "百度千帆",
+  "m": "ERNIE-5.5-Flash-Preview",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-11-30",
+  "url": "https://cloud.baidu.com/doc/qianfan/s/Dmrabu8b6",
+  "desc": "11/11 发布、11/19 补齐千帆文档：日间 8:00-22:00 五折（忙时刊例 ¥2/¥8，折后 ¥1/¥4），夜间 22:00-次日 8:00 二五折（¥0.5/¥2），到 11/30 23:59；2800 亿总参 / 140 亿激活、1M 上下文，Terminal-Bench 4.0 拿 46.5。权重承诺 11/25 前按 Apache 2.0 开源。",
+  "risk": "官方自己标注是后训练未完成的中间版，能力有缺陷、追求稳定别切主力；折扣只覆盖这个 Preview 模型，且是千帆站内价，别拿它跟 Qwen4-Max 正式版横比。"
+},
+{
+  "tag": "新人额度",
+  "tone": "free",
+  "big": "100万/模型",
+  "p": "腾讯云",
+  "m": "TokenHub 新人包",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-12-31",
+  "url": "https://cloud.tencent.com/document/product/1823/130053",
+  "desc": "每个主账号、每个语言模型各 100 万 tokens（多模态理解模型同样 100 万），有效期 1 年，领取窗口到 12/31；Hy3、Hy4、Hy4 flash、DeepSeek、GLM、Kimi 都在名单里，Base URL tokenhub.tencentmaas.com/v1 兼容 OpenAI 格式。",
+  "risk": "每个模型只能领一次、不可叠加转让，额度锁主账号；全部勾选等于把机会摊平，只勾真要用的；未开后付费时额度用完直接停，不会攒出账单。"
+},
+{
+  "tag": "新人额度",
+  "tone": "free",
+  "big": "2500万",
+  "p": "移动云",
+  "m": "MoMA 免费试用",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-12-31",
+  "url": "https://ecloud.10086.cn",
+  "desc": "实名后在模型广场领 2500 万 tokens，领取截止 12/31；平台汇聚 300 多款模型、统一 API，日常对话与写稿够用一个月。",
+  "risk": "30 天从领取日算起、不是到 12/31，12/30 领就只剩一个月；限流 3000 tokens/分钟，跑批量先撞限速；自营 Qwen3.5-35B-A3B、合作模型、机密模型不参与抵扣；同一身份下所有账号只能领一次。"
 }
 ],
   items: [
