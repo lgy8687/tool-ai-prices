@@ -292,7 +292,7 @@
    focusItems[] 优惠卡（方案 D）：模型名超大主角，big=免费/折扣/降价事件横条大字 + desc 说明；tone 配色；deadline 自动倒计时、排序、过期沉底；本期所有优惠都上焦点
    channels[] 渠道比价：按 g 分四组（route 托管端点 / official 官方折扣 / mech 机制型 / warn 反例），每行 m/off/ch/how/price/save/win/tone/src；由脚本渲染成表 */
 const PRICE_DATA = {
-  updatedAt: "2026-11-22",
+  updatedAt: "2026-11-23",
   priceUpdatedAt: "2026-11-22",
   /* 本期焦点 —— 每期只改这一块。
      方案 D：模型名是主角，big 是跟在下面的事件横条大字（免费 / 1亿每日 / 4 折 / -20%），不是报价。
@@ -678,19 +678,6 @@ const PRICE_DATA = {
   "risk": "只有 Meta 自家 API，闭源不能自部署；世界知识弱，别拿它答开放域问题。"
  },
  {
-  "tag": "每周福利",
-  "tone": "free",
-  "big": "1亿",
-  "p": "智谱",
-  "m": "AutoClaw 每周福利 W3",
-  "in": "—",
-  "out": "—",
-  "deadline": "2026-11-22",
-  "url": "https://open.bigmodel.cn/",
-  "desc": "11/16–11/22 登录 AutoClaw 领 1 亿 Tokens（10,000 credits），比第二周的 5000 万翻倍；周周刷新，下一期窗口 11/23 起接棒。",
-  "risk": "限领一次，领后到 11/22 23:59 统一过期；只在客户端内抵 GLM-5.3-Flash，导不出 API Key。"
- },
- {
   "tag": "语音新价",
   "tone": "cut",
   "big": "-50%",
@@ -832,19 +819,6 @@ const PRICE_DATA = {
   "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
   "desc": "Ignite 2026 发布：官方称达 GPT-6.1 Sol 的 98%、Opus 5.5 的 96%，价格只有它们的 40% / 5%；首发五折 $0.5 / $2.5、缓存 $0.025 到 2027/5/16，1M 上下文。Code 2 Flash 更便宜（$0.05 / $0.25），Cyber 2 Flash $0.10 / $0.50，已有三款上 OpenRouter。",
   "risk": "五折是 GitHub Copilot 渠道促销，2027/5/17 回 $1 / $5；96% / 98% 是微软自选四基准的平均值，AA 无独立评分，先拿自己的代码库实测再切换。"
-},
-{
-  "tag": "订阅补贴",
-  "tone": "free",
-  "big": "$200",
-  "p": "OpenCode",
-  "m": "GLM 行动二期",
-  "in": "—",
-  "out": "—",
-  "deadline": "2026-11-22",
-  "url": "https://opencode.ai/",
-  "desc": "11/17 上线、11/18 加码：Go 订阅（$10/月）用户得 $100 GLM-5.3 用量，11/18 直接翻到 $200，折算下来是旗舰档单位成本全场最低；可与内置免费模型池叠加用。",
-  "risk": "官方公告没写截止日，第三方口径提到 11/22 到期（未经官方页面确认），按更早日期保守处理；GLM-5.3 官方价没变，变的是平台替你付钱，别按 $200 做长期预算。"
 },
 {
   "tag": "新人额度",
