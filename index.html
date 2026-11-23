@@ -347,10 +347,10 @@ const PRICE_DATA = {
   "m": "内置免费模型池",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-23",
-  "url": "https://opencode.ai/",
-  "desc": "不注册、不绑卡，OpenCode 内置 -free 后缀模型直接调：GLM-5.3-Flash、DeepSeek V4.1 Flash、LongCat 2.5、MiniMax M3.1 Flash、MiMo V2.6 Flash 等十余款（11/16 新增 Hy4 flash Free；11/18 起 GLM-5.3-Flash Free 已从池中下线）；多数每天 50 次，LongCat 2.5 每天 100 次。",
-  "risk": "只能在 OpenCode 客户端内用，拿不到 API Key；按天刷不结转、速率低，别接生产。"
+  "deadline": "",
+  "url": "https://opencode.ai/docs/zen/",
+  "desc": "官方 Zen 文档仍挂 12 款 -free 模型（DeepSeek V4.1 Flash、MiMo-V2.6-Flash、Nemotron 3.5 两款、Hy4 flash、Big Pickle、Tidepool、Iceman、Beam、Flint 40B、Jev 1.13），全部只写「限时」、没有结束日；LongCat-2.0 已于 11/22 下架、GLM-5.3-Flash Free 11/18 下线。多数每天 50 次，按天刷不结转。",
+  "risk": "只能在 OpenCode 客户端内用，拿不到 API Key；官方无日期、第三方传 11/23 关池，随时可能整池下线，别把生产流程押在这里；部分免费模型会把输入拿去改模型，公司代码别灌。"
  },
  {
   "tag": "每日免费",
@@ -390,19 +390,6 @@ const PRICE_DATA = {
   "url": "https://www.aliyun.com/product/bailian",
   "desc": "11/16 正式版上线即带新人额度：北京（百炼华北 2）100 万 tokens、90 天内有效，够把 Qwen4-Max 跑一轮真实任务；国内刊例 ¥10 / ¥30、缓存 ¥0.5。",
   "risk": "只在华北 2（北京）地域；切别的地域或走 QwenCloud 新加坡站直接按量扣费，两套价目别混算；不支持 Batch 半价。"
- },
- {
-  "tag": "学术赠额",
-  "tone": "free",
-  "big": "5万名额",
-  "p": "OpenAI",
-  "m": "ChatGPT 学术研究计划",
-  "in": "—",
-  "out": "—",
-  "deadline": "2026-11-23",
-  "url": "https://openai.com/",
-  "desc": "11/23 开放新一轮申请，前 5 万名合资格者先到先得（不再抽签），每份含本人 + 最多 2 位协作者，三人免费用 ChatGPT Plus 12 个月。",
-  "risk": "限高校 / 研究机构在职教职与博士后、近三年需 arXiv / bioRxiv / ChemRxiv 署名论文，机构邮箱 + SheerID 核验；本轮由 Pro 降为 Plus，且不含 API 额度。"
  },
  {
   "tag": "海外免费",
@@ -880,10 +867,10 @@ const PRICE_DATA = {
   "m": "ZCode 周末卡 WEEKEND BUILD",
   "in": "—",
   "out": "—",
-  "deadline": "2026-11-23",
+  "deadline": "",
   "url": "https://open.bigmodel.cn/",
-  "desc": "周五 19:00 起在 ZCode 领周末卡，23:00 生效，5 亿 tokens 一张卡覆盖整个周末，下周一 09:00 清零；本周窗口 11/20–11/23，工作日卡每日 3 亿并行不叠加。",
-  "risk": "只在 ZCode 客户端内抵 GLM 系模型，导不出 API Key；周一 09:00 硬清零，周日晚就是最后窗口；每账号限领一次。"
+  "desc": "每周循环：周五 19:00 起在 ZCode 领周末卡，23:00 生效，5 亿 tokens 覆盖整个周末，下周一 09:00 清零。本周窗口（11/20–11/23）已清零，下一个窗口 11/27 19:00 开领；工作日卡每日 3 亿并行不叠加。",
+  "risk": "只在 ZCode 客户端内抵 GLM 系模型，导不出 API Key；周一 09:00 硬清零、周日晚是最后窗口；每账号限领一次，周一 09:00 到 19:00 有 10 小时空档。"
 },
 {
   "tag": "永久免费位",
@@ -897,6 +884,32 @@ const PRICE_DATA = {
   "url": "https://open.bigmodel.cn/",
   "desc": "开放平台注册 + 实名 + 建 Key 直接白嫖一排免费位：GLM-4.6V-Flash / glm-4.1v-thinking-flash 视觉理解与推理、cogview-3-flash 生图、cogvideox-flash 生视频，外加 GLM-4.7-Flash 对话，都是标准 API 接口、可接第三方客户端。",
   "risk": "免费位有速率限制，不适合跑量；视觉 / 生图 / 生视频位 11/20 才入优惠表，属长期免费档非限时活动，规则随时可能调整。"
+},
+{
+  "tag": "每周福利",
+  "tone": "free",
+  "big": "1亿",
+  "p": "智谱",
+  "m": "AutoClaw 第四周福利",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-11-29",
+  "url": "https://autoclaw.zhipuai.cn/blog/news/M11W4/",
+  "desc": "11/23 00:00–11/29 23:59 登录 AutoClaw 国内版即领 1 亿 Tokens（折 10,000 积分），手机号登录自动到账、不填邀请码不绑卡、新老号都能领；无缝接上第三周。国际站同档公告只写 5,000 万 / 5,000 积分，国内版按 1 亿算。",
+  "risk": "领取与失效是同一刻：11/29 23:59 没领的、领了没用完的全部归零、不结转，别拖到周日晚上领；额度锁在客户端内，导不出 API Key、接不进 Claude Code，只能在 AutoClaw 里花。"
+},
+{
+  "tag": "额度加量",
+  "tone": "discount",
+  "big": "+50%",
+  "p": "智谱",
+  "m": "GLM-5.4 Coding Plan",
+  "in": "—",
+  "out": "—",
+  "deadline": "",
+  "url": "https://www.zhipuai.cn/zh/research/164",
+  "desc": "11/23 起 GLM-5.4 向 GLM Coding Plan 全量用户开放，同步上线 ZCode / Trae / WorkBuddy / Qoder：V2 / V3 / 团队版额度提到 1.5 倍（Lite 1 万→1.5 万、Pro 6 万→9 万、Max 14 万→21 万积分），20 万上下文、最大输出 6.4 万，加量不加价。",
+  "risk": "API 尚未开放、待安全评估，现在只能用订阅 + 客户端；Loop 架构容易进「长时间思考」，简单任务也可能多烧额度，别把加量当纯白送；权重计划开源不等于现在能本地跑。"
 }
 ],
   items: [
