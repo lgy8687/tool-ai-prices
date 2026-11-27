@@ -292,7 +292,7 @@
    focusItems[] 优惠卡（方案 D）：模型名超大主角，big=免费/折扣/降价事件横条大字 + desc 说明；tone 配色；deadline 自动倒计时、排序、过期沉底；本期所有优惠都上焦点
    channels[] 渠道比价：按 g 分四组（route 托管端点 / official 官方折扣 / mech 机制型 / warn 反例），每行 m/off/ch/how/price/save/win/tone/src；由脚本渲染成表 */
 const PRICE_DATA = {
-  updatedAt: "2026-11-26",
+  updatedAt: "2026-11-27",
   priceUpdatedAt: "2026-11-26",
   /* 本期焦点 —— 每期只改这一块。
      方案 D：模型名是主角，big 是跟在下面的事件横条大字（免费 / 1亿每日 / 4 折 / -20%），不是报价。
@@ -310,8 +310,8 @@ const PRICE_DATA = {
   "out": "—",
   "deadline": "2026-11-30",
   "url": "https://one.google.com/ai",
-  "desc": "11/27 黑五起对新客开：年付 $199.99 → $99.99（首年 5 折），含 Gemini 4 Neon / Hydrogen、1M 上下文、5TB 网盘（可 6 人共享）、每月 $10 谷歌云赠金、Antigravity 编码额度（可用 Gemini 4 与 Claude 5.5）、1000 Flow 积分、YouTube Premium Lite。",
-  "risk": "只便宜首年，次年自动回 $199.99；年付一次付清不退；第三方渠道买的订阅不享；$10 赠金要手动领并预充 $5；这是订阅额度，不等于 API 额度，拿订阅反代 API 会被封号。"
+  "desc": "新客档 11/27 已正式开放（现有订阅者提前档 11/20–11/26 已收）：年付 $199.99 → $99.99（首年 5 折），含 Gemini 4 Neon / Hydrogen、1M 上下文、5TB 网盘（可 6 人共享）、每月 $10 谷歌云赠金、Antigravity 编码额度（可用 Gemini 4 与 Claude 5.5）、1000 Flow 积分、YouTube Premium Lite。",
+  "risk": "国内 / 非支持地区账号常被锁区（判据是服务条款里的国家版本，不是 IP），换节点无效；只便宜首年，次年自动回 $199.99；年付一次付清不退；第三方渠道买的订阅不享；$10 赠金要手动领并预充 $5；这是订阅额度，不等于 API 额度，拿订阅反代 API 会被封号。"
  },
  {
   "tag": "免费生图",
@@ -544,7 +544,7 @@ const PRICE_DATA = {
   "out": "—",
   "deadline": "2026-11-30",
   "url": "https://cloud.baidu.com/doc/qianfan/s/ymq8wwch2",
-  "desc": "22:00–08:00 指定模型 2 折（企业版：DeepSeek-V4.1-Flash / V4-Pro-0813 / GLM-5.3），个人版 ERNIE-5.5-Flash-Preview 夜间再 2.5 折；官方文档确认活动到 11/30 23:59，纠正之前保守写的 11/23。同期双11 新客首购 5 折与加赠已于 11/23 23:59 随双11活动收口。",
+  "desc": "22:00–08:00 指定模型 2 折（企业版：DeepSeek-V4.1-Flash / V4-Pro-0813 / GLM-5.3），个人版 ERNIE-5.5-Flash-Preview 夜间再 2.5 折；官方文档确认活动到 11/30 23:59，纠正之前保守写的 11/23。上一轮双11 新客首购已于 11/23 23:59 收口，同一时点千帆又挂上「双十二」新档（11/23–12/21，新客首购 5 折 / 老客首次续费 6 折），见另一张 Token Plan 卡。",
   "risk": "只在订阅 / 实名口径生效，按量付费不适用；到期恢复原价，别把夜间价当全天价。"
  },
  {
@@ -557,7 +557,7 @@ const PRICE_DATA = {
   "out": "—",
   "deadline": "2026-11-30",
   "url": "https://www.qiniu.com/",
-  "desc": "实名后每天 1 亿 Token，单笔充值满 100 元升 10 亿/日；qiniu/conatus-free，1M 上下文，OpenAI / Anthropic 双协议。官网首页「双 11 每日 10 亿 Token 限免」就是这档。",
+  "desc": "实名后每天 1 亿 Token，单笔充值满 100 元升 10 亿/日；qiniu/conatus-free，1M 上下文，OpenAI / Anthropic 双协议。官网首页「双 11 每日 10 亿 Token 限免」就是这档。截止口径已核清：每日 1 亿走「1024 程序员节」档期，到 11/30 23:59 收；七牛双 11 整体活动到 12/31，那是 2000 万 0 元购 / 19.9 元秒杀 / 企业订阅计划另一条线，别把 12/31 当成这档的截止日。",
   "risk": "每天 0 点清零不结转、缓存输入也计入、用完硬拒；融合模型不能指定厂商，官方写明勿用于生产。"
  },
  {
@@ -649,7 +649,7 @@ const PRICE_DATA = {
   "deadline": "2026-11-30",
   "url": "https://ai.google.dev/gemini-api/docs/pricing",
   "desc": "现在 $2 / $10 是 12/1 正价的一半，Batch 再半价。重活、长链 Agent、多步调试趁 11 月跑完。",
-  "risk": "比 Argon 多烧思考 token；11/13 起输出超 32K 的请求超时失败也计费。"
+  "risk": "比 Argon 多烧思考 token；11/13 起输出超 32K 的请求超时失败也计费；12/1 不只牌价翻倍，缓存 $0.10→$0.20、Batch / Flex $1/$5→$2/$10、Priority $3.60/$18→$7.20/$36 同步翻。"
  },
  {
   "tag": "双11开跑",
@@ -1014,6 +1014,45 @@ const PRICE_DATA = {
   "url": "https://hiapi.ai/zh/promotions/black-friday",
   "desc": "11/24–11/30（太平洋时间）每天送 1000 万 tokens 的 DeepSeek V4.1 Flash，OpenAI 兼容接口；同档还有充值加赠最高 10%（每人封顶 $50）、图/视频/音频消费返最高 20%（封顶 $100，12/3 到账），自动参与无需优惠码。",
   "risk": "条件是账号至少成功充值过一次、金额不限；免费额每天 0 点（PT）清零不结转，限 10 次/分、并发 2；转售站报价 $0.44/$1.32 比官方闲时 $0.15/$0.60 贵约 47%，白拿行、当长期渠道不行，企业账户不参与。"
+},
+{
+  "tag": "免费生图",
+  "tone": "free",
+  "big": "免费出图",
+  "p": "Recraft（OpenRouter）",
+  "m": "V4.1 Flash V2 :free",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-11-28",
+  "url": "https://openrouter.ai/recraft/recraft-v4.1-flash-v2:free",
+  "desc": "OpenRouter 上模型 ID 带 :free 的那条路由 0 元出图，官方模型页写明免费变体 11/28 退役、付费端点继续按 $0.007/张保留。快速打样、批量出封面图够用，图内文字表现比上一代稳。",
+  "risk": "撤的是免费路由、不是模型：11/28 之后不带 :free 的同名 ID 直接按张计费，调用前先看清完整 ID；账户余额为负时免费模型也会 402；免费档不保证时延与可用性。"
+},
+{
+  "tag": "官方兑换码",
+  "tone": "free",
+  "big": "4500万",
+  "p": "无问 AI（wwlib）",
+  "m": "12 月月度兑换码",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-12-09",
+  "url": "https://www.wwlib.cn/index.php/gift",
+  "desc": "WUWEN_DEC_TOKEN_TICKET 在兑换页换 4500 万 Tokens 限期包，注册后每日另自动到账 3500 万；这是官方按月发的码（10 月同系列是 WUWEN_OCT_TOKEN_TICKET），不是网上那种通用 CDKey。",
+  "risk": "限期包 12/9 11:51 清零、按天到账不结转；平台主打网安 / 安全任务模型（MINI、WUWEN），不是通用聊天旗舰，当主力前先实测；兑换码每月换，别存旧码。"
+},
+{
+  "tag": "订阅折扣",
+  "tone": "discount",
+  "big": "5折",
+  "p": "百度千帆",
+  "m": "Token Plan 双十二",
+  "in": "—",
+  "out": "—",
+  "deadline": "2026-12-21",
+  "url": "https://cloud.baidu.com/doc/qianfan/s/Dmrabu8b6",
+  "desc": "官方文档确认 11/23 23:59–12/21 23:59：积分制新客首购 5 折（Mini ¥4.9/1400 分、Lite ¥19.9/1.15 万、新开 Standard ¥49.9/2.2 万、Pro ¥99.9/4.5 万、Max ¥299.9/16.5 万，后三档首月另加赠 8–12%），老客首次续费 6 折（Standard / Pro 降 30.1%）。",
+  "risk": "只适用「积分制」套餐，Token 制不参与；连续包月次月回原价，企业版购买后不可退订；积分消耗按模型 / 思考模式浮动，别只看月费比价。"
 }
 ],
   items: [
